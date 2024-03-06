@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, NodeEventType, Camera, v3, game, UITransform, misc } from 'cc';
+import { _decorator, Component, Node, Button, NodeEventType, Camera, v3, game, UITransform, misc, input, Input, EventMouse } from 'cc';
 const { ccclass, property } = _decorator;
 @ccclass('Manager_Camera')
 export class Manager_Camera extends Component {
@@ -21,6 +21,7 @@ export class Manager_Camera extends Component {
     right_spd = 0;
     up_spd = 0;
     start() {
+        
         this.btn_right.node.on(NodeEventType.MOUSE_ENTER,this.hover_right,this);
         this.btn_left.node.on(NodeEventType.MOUSE_ENTER,this.hover_left,this);
         this.btn_up.node.on(NodeEventType.MOUSE_ENTER,this.hover_up,this);
@@ -37,6 +38,13 @@ export class Manager_Camera extends Component {
         this.btn_left.node.on(NodeEventType.TOUCH_END,this.hover_end,this);
         this.btn_up.node.on(NodeEventType.TOUCH_END,this.hover_end,this);
         this.btn_down.node.on(NodeEventType.TOUCH_END,this.hover_end,this);
+
+        
+        input.on(Input.EventType.MOUSE_WHEEL, this.on_wheel, this);
+    }
+    on_wheel(e:EventMouse){
+        this.camera.orthoHeight += e.getScrollY() * 0.1;
+       
     }
     hover_right(){
         this.right_spd = this.MOVE_SPD;
