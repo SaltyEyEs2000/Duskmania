@@ -696,7 +696,7 @@
       "__uuid__": "775f6c49-4402-45a0-af61-ff09c8def422",
       "__expectedType__": "cc.TiledMapAsset"
     },
-    "_enableCulling": true,
+    "_enableCulling": false,
     "cleanupImageCache": true,
     "_id": "28IWoeB0NHxIiZVijMsHL0"
   },
@@ -2193,7 +2193,7 @@
       "__id__": 2
     },
     "worldmap": {
-      "__id__": 3
+      "__id__": 6
     },
     "MOVE_SPD": 25,
     "btn_right": {
@@ -2225,7 +2225,7 @@
     "__prefab": null,
     "_projection": 0,
     "_priority": 0,
-    "_fov": 45,
+    "_fov": 72,
     "_fovAxis": 0,
     "_orthoHeight": 360,
     "_near": 0,

@@ -44,7 +44,11 @@ export class Manager_Camera extends Component {
     }
     on_wheel(e:EventMouse){
         this.camera.orthoHeight += e.getScrollY() * 0.1;
-       
+        if(this.camera.orthoHeight<50){
+            this.camera.orthoHeight = 50;
+        }
+        let scale = this.camera.orthoHeight/360
+        this.node.setScale(v3(scale,scale,1))
     }
     hover_right(){
         this.right_spd = this.MOVE_SPD;
