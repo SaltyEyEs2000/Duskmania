@@ -2302,7 +2302,7 @@
     "_priority": 0,
     "_fov": 72,
     "_fovAxis": 0,
-    "_orthoHeight": 432.2689075630252,
+    "_orthoHeight": 360,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -2369,7 +2369,7 @@
     "_cameraComponent": {
       "__id__": 60
     },
-    "_alignCanvasWithScreen": true,
+    "_alignCanvasWithScreen": false,
     "_id": "12O/ljcVlEqLmVm3U2gEOQ"
   },
   {

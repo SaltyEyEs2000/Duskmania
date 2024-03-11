@@ -50,11 +50,11 @@
             "scaleInEditor": 1
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx": {
-            "scale": 0.03125,
-            "selectedLayer": 3,
+            "scale": 0.25,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 6720,
-                "y": 8384
+                "x": 4368,
+                "y": 916
             }
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map1.tmx": {
@@ -84,7 +84,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 1393.939393939394,
-                "y": 1333.3333333333333
+                "y": 1327.2727272727273
             }
         },
         "map1.tmx#duskmania": {
