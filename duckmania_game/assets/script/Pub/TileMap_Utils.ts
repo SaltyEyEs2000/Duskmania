@@ -11,8 +11,12 @@ export class TileMap_Utils{
     public static get_tile_position_by_x_y(x_id: number, y_id: number, tiled_layer: TiledLayer) {
         let layer_size = tiled_layer.getLayerSize();
         let tile_size = tiled_layer.getMapTileSize();
-        let x = (x_id+(y_id%2==0?0:0.5) - layer_size.width/2) * 88;
-        let y = (layer_size.height/2 - y_id) * this.hex_length * 1.5;
+        let tile_extra_height = tile_size.height-this.hex_length;
+        let total_width = (tile_size.width) * (layer_size.width+0.5);
+        let total_height = (tile_size.height - tile_extra_height/2) * layer_size.height + tile_extra_height/2;
+
+        let x = (x_id+(y_id%2==0?0:0.5) + 0.5) * 88 - total_width/2;
+        let y = (-y_id) * (this.hex_length + tile_extra_height/2) + total_height/2 - tile_size.height/2;
         return v2(x, y);
     }
 
