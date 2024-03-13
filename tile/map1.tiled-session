@@ -5,7 +5,8 @@
     },
     "activeFile": "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
     "expandedProjectPaths": [
-        "."
+        ".",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap"
     ],
     "fileStates": {
         "": {
@@ -50,11 +51,11 @@
             "scaleInEditor": 1
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx": {
-            "scale": 0.25,
-            "selectedLayer": 2,
+            "scale": 0.03125,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 4368,
-                "y": 916
+                "x": 13248,
+                "y": 1504
             }
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map1.tmx": {
@@ -102,15 +103,18 @@
     "map.tileHeight": 140,
     "map.tileWidth": 120,
     "openFiles": [
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx"
+        "map1.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx"
     ],
     "project": "map1.tiled-project",
     "recentFiles": [
+        "map1.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Chimaera_World_Map.tsx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx",
-        "map1.tmx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/#1.tmx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map1.tmx",
         "duskmania.tsx",
