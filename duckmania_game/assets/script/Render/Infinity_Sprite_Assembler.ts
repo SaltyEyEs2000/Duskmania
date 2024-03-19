@@ -1,7 +1,7 @@
-import { IAssembler, IRenderData, RenderData, dynamicAtlasManager, UIRenderer } from "cc";
+import { IAssembler, IRenderData, RenderData, dynamicAtlasManager, UIRenderer, UIVertexFormat } from "cc";
 import { Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
 
-export const RoundBoxAssembler: IAssembler = {
+export const Infinity_Sprite_Assembler : IAssembler = {
 
     gen_index_buff(render:Infinity_Sprite_Render):number[]{
         let l = render.data.length;
@@ -17,7 +17,7 @@ export const RoundBoxAssembler: IAssembler = {
 
         let vNum = sprite.data.length*4;
         renderData.dataLength = vNum;
-        let indexBuffer = RoundBoxAssembler.GetIndexBuffer(sprite);
+        let indexBuffer = Infinity_Sprite_Assembler.GetIndexBuffer(sprite);
         
         renderData.resize(vNum,indexBuffer.length);
         renderData.chunk.setIndexBuffer(indexBuffer);
@@ -27,18 +27,19 @@ export const RoundBoxAssembler: IAssembler = {
     
     // 照抄simple的
     updateRenderData (sprite: Infinity_Sprite_Render) {
-        const frame = sprite.spriteFrame;
+        
+        let data_map = sprite.get_data_map();
+        for (const key in data_map) {
+            let data = data_map[key];
+            let rd = RenderData.add(UIVertexFormat.vfmtPosUvColor);
+            this._type_render_data.push({
+                render_data:rd,
+                texture:this.arr_texture[key],
+            });
 
-        dynamicAtlasManager.packToDynamicAtlas(sprite, frame);
-        this.updateUVs(sprite);// dirty need
-        //this.updateColor(sprite);// dirty need
-
-        const renderData = sprite.renderData;
-        if (renderData && frame) {
-            if (renderData.vertDirty) {
-                this.updateVertexData(sprite);
-            }
-            renderData.updateRenderData(sprite, frame);
+            rd.resize(data.length * 4,data.length * 6);
+            let buffer = new Float32Array(data.length * 9 * 4)
+            rd.chunk.vb.set(buffer)
         }
     },
 }
