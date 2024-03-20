@@ -2,7 +2,8 @@ import { IAssembler, IRenderData, RenderData, dynamicAtlasManager, UIRenderer, U
 import { Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
 
 export const Infinity_Sprite_Assembler : IAssembler = {
-    updateRenderData (sprite: Infinity_Sprite_Render) {        
+    updateRenderData (sprite: Infinity_Sprite_Render) {      
+        sprite.destroyRenderData();  
         let data_map = sprite.get_data_map();
         sprite._type_render_data = [];
         
@@ -28,6 +29,8 @@ export const Infinity_Sprite_Assembler : IAssembler = {
             let vertexBuf = new Float32Array(data.length * 9 * 4);
             rd.chunk.vb.set(vertexBuf)
 
+            const material = sprite.getRenderMaterial(0);
+            rd.material = material;
             for (let i = 0; i < data.length; i++) {
                 const quad = data[i];
                 let _vfOffset = i * 4 * 9;
@@ -76,6 +79,23 @@ export const Infinity_Sprite_Assembler : IAssembler = {
                 vertexBuf.set(color, _vfOffset + vertStep + 5);
                 vertexBuf.set(color, _vfOffset + vertStep2 + 5);
                 vertexBuf.set(color, _vfOffset + vertStep3 + 5);
+
+                
+                // lt/ct -> a
+                vertexBuf[_vfOffset + 3] = 0;
+                vertexBuf[_vfOffset + 4] = 0;
+
+                // lb/lc -> b
+                vertexBuf[_vfOffset + vertStep + 3] = 0;
+                vertexBuf[_vfOffset + vertStep + 4] = 1;
+
+                // rt/rc -> c
+                vertexBuf[_vfOffset + vertStep2 + 3] = 1;
+                vertexBuf[_vfOffset + vertStep2 + 4] = 0;
+
+                // rt/cb -> d
+                vertexBuf[_vfOffset + vertStep3 + 3] = 1;
+                vertexBuf[_vfOffset + vertStep3 + 4] = 1;
                 
             }
 
@@ -119,7 +139,7 @@ export const Infinity_Sprite_Assembler : IAssembler = {
         const rs = sprite._type_render_data;
         for (const r of rs) {
             if (!r.render_data) continue;
-            const renderData = (r as any).renderData;
+            const renderData = (r as any).render_data;
             const vs = renderData.vData;
             for (let i = renderData.vertexStart, l = renderData.vertexCount; i < l; i++) {
                 vs.set(colorV, i * 9 + 5);

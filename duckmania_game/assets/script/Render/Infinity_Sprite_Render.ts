@@ -9,7 +9,7 @@ interface Type_Render_Data{
 }
 
 
-const MaxGridsLimit = Math.ceil(65535 / 6);
+const MaxGridsLimit = Math.ceil(1000);
 @ccclass('Infinity_Sprite_Render')
 
 export class Infinity_Sprite_Render extends UIRenderer {
@@ -65,6 +65,14 @@ export class Infinity_Sprite_Render extends UIRenderer {
         }
     }
 
+    destroyRenderData(){
+        this._type_render_data.forEach((rd) => {
+            const renderData = (rd).render_data;
+            if (renderData) RenderData.remove(renderData);
+        });
+        this._type_render_data = [];
+        super.destroyRenderData();
+    }
     
     protected _flushAssembler () {
         const assembler = Infinity_Sprite_Assembler;
