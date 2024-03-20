@@ -3,6 +3,7 @@ import { Infinity_Render } from '../Pub/Infinity_Render';
 import { TileMap_Utils } from '../Pub/TileMap_Utils';
 import { Block_Render } from '../Render/Block_Render';
 import { Data_Manager } from './Data_Manager';
+import { Infinity_Sprite_Render } from '../Render/Infinity_Sprite_Render';
 const { ccclass, property } = _decorator;
 
 @ccclass()
@@ -12,6 +13,9 @@ export class GameManager extends Component {
     @property(Prefab)
     pf_block:Prefab = undefined;
     i_render:Infinity_Render<Block_Render> = undefined;
+
+    @property(Infinity_Sprite_Render)
+    i_sp_render:Infinity_Sprite_Render = undefined;
 
     @property(TiledMap)
     tm_map:TiledMap = undefined;
@@ -42,11 +46,12 @@ export class GameManager extends Component {
     }
 
     start() {
-        this.i_render = new Infinity_Render(this.nd_arr_block,this.pf_block,Block_Render);
+        // this.i_render = new Infinity_Render(this.nd_arr_block,this.pf_block,Block_Render);
         this.init_tile_map();
+        this.i_sp_render.set_data(Data_Manager.arr_block);
     }
 
     update(deltaTime: number) {
-        this.i_render.fresh(v=>true,Data_Manager.arr_block);
+        // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }
 }
