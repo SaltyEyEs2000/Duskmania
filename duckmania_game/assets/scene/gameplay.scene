@@ -140,7 +140,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 4
@@ -876,20 +876,20 @@
     },
     "arr_texture": [
       {
-        "__uuid__": "a03bf357-4198-47b0-a2c6-710d483e21c3@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__uuid__": "a072fb62-e4f3-47bf-83cd-360c6f94cbd4@f9941",
+        "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "797e3f71-a980-43bc-b08d-2efd06a95935@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__uuid__": "4e92ecc6-bb69-4b66-a32e-fae6ba4c4996@f9941",
+        "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "4e92ecc6-bb69-4b66-a32e-fae6ba4c4996@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__uuid__": "76d5e25d-f59b-4223-afd3-73fd743a6ea1@f9941",
+        "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "76d5e25d-f59b-4223-afd3-73fd743a6ea1@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__uuid__": "797e3f71-a980-43bc-b08d-2efd06a95935@f9941",
+        "__expectedType__": "cc.SpriteFrame"
       }
     ],
     "_id": "4fPYCtoXFKEJeShaySHmbQ"

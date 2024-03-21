@@ -49,6 +49,7 @@ export class GameManager extends Component {
         // this.i_render = new Infinity_Render(this.nd_arr_block,this.pf_block,Block_Render);
         this.init_tile_map();
         this.i_sp_render.set_data(Data_Manager.arr_block);
+        this.tm_map.node.active = false;
     }
 
     update(deltaTime: number) {

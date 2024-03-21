@@ -2,104 +2,66 @@ import { IAssembler, IRenderData, RenderData, dynamicAtlasManager, UIRenderer, U
 import { Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
 
 export const Infinity_Sprite_Assembler : IAssembler = {
-    updateRenderData (sprite: Infinity_Sprite_Render) {      
-        sprite.destroyRenderData();  
-        let data_map = sprite.get_data_map();
-        sprite._type_render_data = [];
-        
-        const matrix = sprite.node.worldMatrix;
-        const vertStep = 9;
-        const vertStep2 = vertStep * 2;
-        const vertStep3 = vertStep * 3;
-        const color: Float32Array = new Float32Array(4);
-        color[0] = sprite.color.r / 255;
-        color[1] = sprite.color.g / 255;
-        color[2] = sprite.color.b / 255;
-        color[3] = sprite.color.a / 255;
 
-        for (const key in data_map) {
-            let data = data_map[key];
-            let rd = RenderData.add(UIVertexFormat.vfmtPosUvColor);
+    initRenderData(sprite: Infinity_Sprite_Render){ 
+        let all_data = sprite.data;
+        sprite._type_render_data = [];
+
+        for (const data of all_data) {
+            let rd = sprite.requestRenderData();;
             sprite._type_render_data.push({
                 render_data:rd,
-                texture:sprite.arr_texture[data[0].type],
+                texture:sprite.arr_texture[data.type],
             });
 
-            rd.resize(data.length * 4,data.length * 6);
-            let vertexBuf = new Float32Array(data.length * 9 * 4);
-            rd.chunk.vb.set(vertexBuf)
+            rd.dataLength = 4;
+            rd.resize(1 * 4,1 * 6);
+            rd.chunk.setIndexBuffer([0,1,2,2,3,0])
 
             const material = sprite.getRenderMaterial(0);
             rd.material = material;
-            for (let i = 0; i < data.length; i++) {
-                const quad = data[i];
-                let _vfOffset = i * 4 * 9;
-                const vec3_temps: Vec3[] = [];
-                for (let i = 0; i < 4; i++) {
-                    vec3_temps.push(new Vec3());
-                }
-                const left = quad.x - sprite.size_w/2;
-                const top = quad.y + sprite.size_h/2;
-                const bottom = quad.y - sprite.size_h/2;
-                const right = quad.x + sprite.size_w/2;
-                
-                vec3_temps[0].x = left;
-                vec3_temps[0].y = top;
 
-                vec3_temps[1].x = left;
-                vec3_temps[1].y = bottom;
+            
+            const left = data.x - sprite.size_w/2;
+            const top = data.y + sprite.size_h/2;
+            const bottom = data.y - sprite.size_h/2;
+            const right = data.x + sprite.size_w/2;
+            
+            rd.data[0].x = left;
+            rd.data[0].y = top;
+            rd.data[1].x = left;
+            rd.data[1].y = bottom;
+            rd.data[2].x = right;
+            rd.data[2].y = top;
+            rd.data[3].x = right;
+            rd.data[3].y = bottom;
 
-                vec3_temps[2].x = right;
-                vec3_temps[2].y = top;
+            
+            const uv = sprite.arr_texture[data.type].uv;
+            const uv_l = uv[0];
+            const uv_b = uv[1];
+            const uv_r = uv[2];
+            const uv_t = uv[5];
 
-                vec3_temps[3].x = right;
-                vec3_temps[3].y = bottom;
-    
-                vec3_temps[0].transformMat4(matrix);
-                vertexBuf[_vfOffset] = vec3_temps[0].x;
-                vertexBuf[_vfOffset + 1] = vec3_temps[0].y;
-                vertexBuf[_vfOffset + 2] = vec3_temps[0].z;
-    
-                vec3_temps[1].transformMat4(matrix);
-                vertexBuf[_vfOffset + vertStep] = vec3_temps[1].x;
-                vertexBuf[_vfOffset + vertStep + 1] = vec3_temps[1].y;
-                vertexBuf[_vfOffset + vertStep + 2] = vec3_temps[1].z;
-    
-                vec3_temps[2].transformMat4(matrix);
-                vertexBuf[_vfOffset + vertStep2] = vec3_temps[2].x;
-                vertexBuf[_vfOffset + vertStep2 + 1] = vec3_temps[2].y;
-                vertexBuf[_vfOffset + vertStep2 + 2] = vec3_temps[2].z;
-    
-                vec3_temps[3].transformMat4(matrix);
-                vertexBuf[_vfOffset + vertStep3] = vec3_temps[3].x;
-                vertexBuf[_vfOffset + vertStep3 + 1] = vec3_temps[3].y;
-                vertexBuf[_vfOffset + vertStep3 + 2] = vec3_temps[3].z;
-    
-                vertexBuf.set(color, _vfOffset + 5);
-                vertexBuf.set(color, _vfOffset + vertStep + 5);
-                vertexBuf.set(color, _vfOffset + vertStep2 + 5);
-                vertexBuf.set(color, _vfOffset + vertStep3 + 5);
+            rd.data[0].u = uv_l;
+            rd.data[0].v = uv_t;
+            rd.data[1].u = uv_r;
+            rd.data[1].v = uv_t;
+            rd.data[2].u = uv_l;
+            rd.data[2].v = uv_b;
+            rd.data[3].u = uv_r;
+            rd.data[3].v = uv_b;
 
-                
-                // lt/ct -> a
-                vertexBuf[_vfOffset + 3] = 0;
-                vertexBuf[_vfOffset + 4] = 0;
+            rd.data[0].color = sprite.color;
+            rd.data[1].color = sprite.color;
+            rd.data[2].color = sprite.color;
+            rd.data[3].color = sprite.color;
+        }
 
-                // lb/lc -> b
-                vertexBuf[_vfOffset + vertStep + 3] = 0;
-                vertexBuf[_vfOffset + vertStep + 4] = 1;
-
-                // rt/rc -> c
-                vertexBuf[_vfOffset + vertStep2 + 3] = 1;
-                vertexBuf[_vfOffset + vertStep2 + 4] = 0;
-
-                // rt/cb -> d
-                vertexBuf[_vfOffset + vertStep3 + 3] = 1;
-                vertexBuf[_vfOffset + vertStep3 + 4] = 1;
-                
-            }
-
-
+    },
+    updateRenderData (sprite: Infinity_Sprite_Render) {    
+        for (const pack of sprite._type_render_data) {  
+            pack.render_data.updateRenderData(sprite,pack.texture);
         }
     },
     

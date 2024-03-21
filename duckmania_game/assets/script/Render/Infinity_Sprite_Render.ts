@@ -1,10 +1,10 @@
-import { RenderData, Texture2D, UIRenderer, UIVertexFormat, __private, _decorator } from "cc";
+import { RenderData, Texture2D, UIRenderer, UIVertexFormat, __private, _decorator, SpriteFrame } from "cc";
 import { Block_Data } from "../Data/Block_Data";
 import { Infinity_Sprite_Assembler } from "./Infinity_Sprite_Assembler";
 
 const { ccclass, property,type} = _decorator;
 interface Type_Render_Data{
-    texture:Texture2D;
+    texture:SpriteFrame;
     render_data:RenderData;
 }
 
@@ -13,8 +13,8 @@ const MaxGridsLimit = Math.ceil(1000);
 @ccclass('Infinity_Sprite_Render')
 
 export class Infinity_Sprite_Render extends UIRenderer {
-    @property(Texture2D)
-    arr_texture:Texture2D[]=[];
+    @property(SpriteFrame)
+    arr_texture:SpriteFrame[]=[];
 
     data:Block_Data[]=[];
     data_map:Block_Data[][]=[];
@@ -24,9 +24,14 @@ export class Infinity_Sprite_Render extends UIRenderer {
     _type_render_data:Type_Render_Data[]=[];
     _type_render_idx = 0;
 
+    protected resetAssembler() {
+        this._assembler = null;
+        this._flushAssembler();
+    }
+
     set_data(data:Block_Data[]){
         this.data = data;
-        this.markForUpdateRenderData();
+        this.resetAssembler();
     }
 
     get_data_map():Block_Data[][]{
@@ -81,9 +86,15 @@ export class Infinity_Sprite_Render extends UIRenderer {
             this.destroyRenderData();
             this._assembler = assembler;
         }
-        if (this.data.length === 0) {
-            this.markForUpdateRenderData();
-            this._updateColor();
+
+
+        if (!this._renderData) {
+            if (this._assembler) {
+                this._assembler.initRenderData(this);
+                this.markForUpdateRenderData();
+                this._assembler.updateRenderData(this);
+                this._updateColor();
+            }
         }
     }
 }
