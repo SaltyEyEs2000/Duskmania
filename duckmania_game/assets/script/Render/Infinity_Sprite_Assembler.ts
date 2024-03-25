@@ -1,5 +1,6 @@
-import { IAssembler, IRenderData, RenderData, dynamicAtlasManager } from "cc";
-import { Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
+import { IAssembler, IRenderData, RenderData, SpriteFrame, dynamicAtlasManager, sp ,Node} from "cc";
+import { Infinity_Render_Data, Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
+import { Block_Data } from "../Data/Block_Data";
 
 export const Infinity_Sprite_Assembler: IAssembler = {
 
@@ -11,43 +12,51 @@ export const Infinity_Sprite_Assembler: IAssembler = {
         return indexBuffer
     },
     createData (sprite: Infinity_Sprite_Render) {
-        const renderData = sprite.requestRenderData();
-        let corner = 0;
-
-        let vNum = 4 ;
-        renderData.dataLength = vNum;
-        renderData.resize(vNum, 6);
-
-        let indexBuffer = Infinity_Sprite_Assembler.GetIndexBuffer(sprite);
-        renderData.chunk.setIndexBuffer(indexBuffer);
-        return renderData;
+        for (const data of sprite.data) {
+            const renderData = sprite.requestRenderData();
+    
+            let vNum = 4 ;
+            renderData.dataLength = vNum;
+            renderData.resize(vNum, 6);
+    
+            let indexBuffer = Infinity_Sprite_Assembler.GetIndexBuffer(sprite);
+            renderData.chunk.setIndexBuffer(indexBuffer);
+            renderData!.material = sprite.getRenderMaterial(0)
+            sprite._arr_render_data.push({
+                spriteFrame:sprite.arr_sf[data.type],
+                render_data:renderData,
+                x:data.x,
+                y:data.y,
+            })
+        }
     },
 
     // 照抄simple的
     updateRenderData (sprite: Infinity_Sprite_Render) {
-        const frame = sprite.spriteFrame;
-
-        dynamicAtlasManager.packToDynamicAtlas(sprite, frame);
-        this.updateUVs(sprite);// dirty need
-        //this.updateColor(sprite);// dirty need
-
-        const renderData = sprite.renderData;
-        if (renderData && frame) {
-            if (renderData.vertDirty) {
-                this.updateVertexData(sprite);
+        for (const data of sprite._arr_render_data){
+            const frame = data.spriteFrame;
+    
+            dynamicAtlasManager.packToDynamicAtlas(sprite, frame);
+            this.updateUVs(data);// dirty need
+            //this.updateColor(sprite);// dirty need
+    
+            const renderData = data.render_data;
+            if (renderData && frame) {
+                if (renderData.vertDirty) {
+                    this.updateVertexData(data);
+                }
+                renderData.updateRenderData(sprite, frame);
             }
-            renderData.updateRenderData(sprite, frame);
         }
     },
 
     // 局部坐标转世界坐标 照抄的，不用改
-    updateWorldVerts (sprite: Infinity_Sprite_Render, chunk: { vb: any; }) {
-        const renderData = sprite.renderData!;
+    updateWorldVerts (sprite: Infinity_Render_Data,render:Infinity_Sprite_Render, chunk: { vb: any; }) {
+        const renderData = sprite.render_data!;
         const vData = chunk.vb;
 
         const dataList: IRenderData[] = renderData.data;
-        const node = sprite.node;
-        const m = node.worldMatrix;
+        const m = render.node.worldMatrix;
 
         const stride = renderData.floatStride;
         let offset = 0;
@@ -68,15 +77,12 @@ export const Infinity_Sprite_Assembler: IAssembler = {
 
     // 每帧调用的，把数据和到一整个meshbuffer里
     fillBuffers (sprite: Infinity_Sprite_Render) {
-        if (sprite === null) {
-            return;
-        }
-
-        const renderData = sprite.renderData!;
+        let data = sprite._arr_render_data[sprite._idx_render_data]
+        const renderData = data.render_data!;
         const chunk = renderData.chunk;
         if (sprite.node.hasChangedFlags || renderData.vertDirty) {
             // const vb = chunk.vertexAccessor.getVertexBuffer(chunk.bufferId);
-            this.updateWorldVerts(sprite, chunk);
+            this.updateWorldVerts(data,sprite, chunk);
             renderData.vertDirty = false;
         }
 
@@ -97,27 +103,24 @@ export const Infinity_Sprite_Assembler: IAssembler = {
     },
 
     // 计算每个顶点相对于sprite坐标的位置
-    updateVertexData (sprite: Infinity_Sprite_Render) {
-        const renderData: RenderData | null = sprite.renderData;
+    updateVertexData (sprite: Infinity_Render_Data) {
+        const renderData: RenderData | null = sprite.render_data;
         if (!renderData) {
             return;
         }
 
-        const uiTrans = sprite.node._uiProps.uiTransformComp!;
         const dataList: IRenderData[] = renderData.data;
-        const cw = uiTrans.width;
-        const ch = uiTrans.height;
-        const appX = uiTrans.anchorX * cw;
-        const appY = uiTrans.anchorY * ch;
+        const cw = 44;
+        const ch = 51;
+        const appX = 0.5 * cw;
+        const appY = 0.5 * ch;
 
-        const left = 0 - appX;
-        const right = cw - appX;
-        const top = ch - appY;
-        const bottom = 0 - appY;
+        const left = 0 - appX + sprite.x;
+        const right = cw - appX + sprite.x;
+        const top = ch - appY + sprite.y;
+        const bottom = 0 - appY + sprite.y;
 
         const left_r = left;
-        const bottom_r = bottom;
-        const top_r = top;
         const right_r = right;
 
         // 三个矩形的顶点
@@ -135,9 +138,9 @@ export const Infinity_Sprite_Assembler: IAssembler = {
     },
 
     // 更新计算uv
-    updateUVs (sprite: Infinity_Sprite_Render) {
+    updateUVs (sprite: Infinity_Render_Data) {
         if (!sprite.spriteFrame) return;
-        const renderData = sprite.renderData!;
+        const renderData = sprite.render_data!;
         const vData = renderData.chunk.vb;
         const uv = sprite.spriteFrame.uv;
 
@@ -147,38 +150,40 @@ export const Infinity_Sprite_Assembler: IAssembler = {
         const uv_b = uv[1];
         const uv_r = uv[2];
         const uv_t = uv[5];
-        const uv_w = Math.abs(uv_r - uv_l);
-        const uv_h = uv_t - uv_b;
 
-        const uiTrans = sprite.node._uiProps.uiTransformComp!;
-        const dataList: IRenderData[] = renderData.data;
-        const cw = uiTrans.width;
-        const ch = uiTrans.height;
-        const appX = uiTrans.anchorX * cw;
-        const appY = uiTrans.anchorY * ch;
+        vData[0 * renderData.floatStride + 3] = uv_l;
+        vData[0 * renderData.floatStride + 4] = uv_b;
+        vData[1 * renderData.floatStride + 3] = uv_l;
+        vData[1 * renderData.floatStride + 4] = uv_t;
+        vData[2 * renderData.floatStride + 3] = uv_r;
+        vData[2 * renderData.floatStride + 4] = uv_t;
+        vData[3 * renderData.floatStride + 3] = uv_r;
+        vData[3 * renderData.floatStride + 4] = uv_b;
 
         // 用相对坐标，计算uv
-        for (let i = 0; i < renderData.dataLength; i++) {
-            vData[i * renderData.floatStride + 3] = uv_l + (dataList[i].x + appX) / cw * uv_w;
-            vData[i * renderData.floatStride + 4] = uv_b + (dataList[i].y + appY) / ch * uv_h;
-        }
+        // for (let i = 0; i < renderData.dataLength; i++) {
+        //     vData[i * renderData.floatStride + 3] = uv_l + (dataList[i].x + appX) / cw * uv_w;
+        //     vData[i * renderData.floatStride + 4] = uv_b + (dataList[i].y + appY) / ch * uv_h;
+        // }
     },
 
     // 照抄，不用改
     updateColor (sprite: Infinity_Sprite_Render) {
-        const renderData = sprite.renderData!;
-        const vData = renderData.chunk.vb;
-        let colorOffset = 5;
-        const color = sprite.color;
-        const colorR = color.r / 255;
-        const colorG = color.g / 255;
-        const colorB = color.b / 255;
-        const colorA = color.a / 255;
-        for (let i = 0; i < renderData.dataLength; i++, colorOffset += renderData.floatStride) {
-            vData[colorOffset] = colorR;
-            vData[colorOffset + 1] = colorG;
-            vData[colorOffset + 2] = colorB;
-            vData[colorOffset + 3] = colorA;
+        for (const data of sprite._arr_render_data) {
+            const renderData = data.render_data;
+            const vData = renderData.chunk.vb;
+            let colorOffset = 5;
+            const color = sprite.color;
+            const colorR = color.r / 255;
+            const colorG = color.g / 255;
+            const colorB = color.b / 255;
+            const colorA = color.a / 255;
+            for (let i = 0; i < renderData.dataLength; i++, colorOffset += renderData.floatStride) {
+                vData[colorOffset] = colorR;
+                vData[colorOffset + 1] = colorG;
+                vData[colorOffset + 2] = colorB;
+                vData[colorOffset + 3] = colorA;
+            }
         }
     },
 };

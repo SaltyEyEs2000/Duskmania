@@ -874,16 +874,24 @@
       "b": 255,
       "a": 255
     },
-    "_segments": 10,
-    "_radius": 20,
-    "_spriteFrame": {
-      "__uuid__": "4e92ecc6-bb69-4b66-a32e-fae6ba4c4996@f9941",
-      "__expectedType__": "cc.SpriteFrame"
-    },
-    "_leftTop": true,
-    "_rightTop": true,
-    "_leftBottom": true,
-    "_rightBottom": true,
+    "arr_sf": [
+      {
+        "__uuid__": "a072fb62-e4f3-47bf-83cd-360c6f94cbd4@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "9cf7be83-1c15-4fce-a9c7-ce742866515d@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "4e92ecc6-bb69-4b66-a32e-fae6ba4c4996@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "76d5e25d-f59b-4223-afd3-73fd743a6ea1@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      }
+    ],
     "_id": "4fPYCtoXFKEJeShaySHmbQ"
   },
   {
