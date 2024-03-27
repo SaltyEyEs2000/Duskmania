@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Terrain" tilewidth="88" tileheight="102" tilecount="7" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Terrain" tilewidth="88" tileheight="102" tilecount="12" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="88" height="102" source="sea.png"/>
@@ -21,6 +21,21 @@
  </tile>
  <tile id="6">
   <image width="88" height="102" source="1000+.png"/>
+ </tile>
+ <tile id="13">
+  <image width="88" height="102" source="country.png"/>
+ </tile>
+ <tile id="33">
+  <image width="88" height="102" source="citylevel_I.png"/>
+ </tile>
+ <tile id="31">
+  <image width="88" height="102" source="citylevel_II.png"/>
+ </tile>
+ <tile id="32">
+  <image width="88" height="102" source="citylevel_IiI.png"/>
+ </tile>
+ <tile id="28">
+  <image width="88" height="102" source="Capital2.png"/>
  </tile>
  <wangsets>
   <wangset name="未命名集" type="mixed" tile="-1">

@@ -25,8 +25,7 @@ export const Infinity_Sprite_Assembler: IAssembler = {
             sprite._arr_render_data.push({
                 spriteFrame:sprite.arr_sf[data.type],
                 render_data:renderData,
-                x:data.x,
-                y:data.y,
+                data:data,
             })
         }
     },
@@ -110,15 +109,15 @@ export const Infinity_Sprite_Assembler: IAssembler = {
         }
 
         const dataList: IRenderData[] = renderData.data;
-        const cw = 44;
-        const ch = 51;
-        const appX = 0.5 * cw;
-        const appY = 0.5 * ch;
+        const cw = sprite.data.width;
+        const ch = sprite.data.height;
+        const appX = 0.5 * sprite.data.width;
+        const appY = 0.5 * sprite.data.height;
 
-        const left = 0 - appX + sprite.x;
-        const right = cw - appX + sprite.x;
-        const top = ch - appY + sprite.y;
-        const bottom = 0 - appY + sprite.y;
+        const left = 0 - appX + sprite.data.x;
+        const right = cw - appX + sprite.data.x;
+        const top = ch - appY + sprite.data.y;
+        const bottom = 0 - appY + sprite.data.y;
 
         const left_r = left;
         const right_r = right;

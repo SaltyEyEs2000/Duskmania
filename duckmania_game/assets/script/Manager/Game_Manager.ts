@@ -39,6 +39,8 @@ export class GameManager extends Component {
                 Data_Manager.arr_block.push({
                     x:world_pos.x,
                     y:world_pos.y,
+                    width:88,
+                    height:102,
                     type:image_type,
                 })
             }

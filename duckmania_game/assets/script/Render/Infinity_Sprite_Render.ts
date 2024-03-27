@@ -8,8 +8,7 @@ const { ccclass, property,type} = _decorator;
 export interface Infinity_Render_Data{
     spriteFrame:SpriteFrame,
     render_data:RenderData,
-    x:number,
-    y:number,
+    data:Block_Data,
 }
 enum EventType {
     SPRITE_FRAME_CHANGED = 'spriteframe-changed',
