@@ -1,9 +1,10 @@
-import { _decorator, Component, Node, Prefab, TiledMap } from 'cc';
+import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMouse } from 'cc';
 import { Infinity_Render } from '../Pub/Infinity_Render';
 import { TileMap_Utils } from '../Pub/TileMap_Utils';
 import { Block_Render } from '../Render/Block_Render';
 import { Data_Manager } from './Data_Manager';
 import { Infinity_Sprite_Render } from '../Render/Infinity_Sprite_Render';
+import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
 const { ccclass, property } = _decorator;
 
 @ccclass()
@@ -39,8 +40,8 @@ export class GameManager extends Component {
                 Data_Manager.arr_block.push({
                     x:world_pos.x,
                     y:world_pos.y,
-                    width:88,
-                    height:102,
+                    width:88 * 0.8,
+                    height:102 * 0.8,
                     type:image_type,
                 })
             }
@@ -52,8 +53,12 @@ export class GameManager extends Component {
         this.init_tile_map();
         this.i_sp_render.set_data(Data_Manager.arr_block);
         this.tm_map.node.active = false;
-    }
 
+        Event_Dispatcher.on("mouse_move",this,this.on_mouse_move)
+    }
+    on_mouse_move(p:{x:number,y:number}){
+        console.log(`x:${p.x},y:${p.y}`)
+    }
     update(deltaTime: number) {
         // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }

@@ -802,8 +802,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 127.726,
-      "y": 58.332,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -2498,7 +2498,9 @@
     "canvas": {
       "__id__": 2
     },
-    "worldmap": null,
+    "worldmap": {
+      "__id__": 8
+    },
     "MOVE_SPD": 25,
     "btn_right": {
       "__id__": 37
