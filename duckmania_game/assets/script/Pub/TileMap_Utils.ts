@@ -8,7 +8,6 @@ export class TileMap_Utils {
     }
 
     static hex_length = 52;
-    static hex_height = 88;
     public static get_tile_position_by_x_y(x_id: number, y_id: number, tiled_layer: TiledLayer) {
         let layer_size = tiled_layer.getLayerSize();
         let tile_size = tiled_layer.getMapTileSize();
@@ -16,7 +15,7 @@ export class TileMap_Utils {
         let total_width = (tile_size.width) * (layer_size.width + 0.5);
         let total_height = (tile_size.height - tile_extra_height / 2) * layer_size.height + tile_extra_height / 2;
 
-        let x = (x_id + (y_id % 2 == 0 ? 0 : 0.5) + 0.5) * this.hex_height - total_width / 2;
+        let x = (x_id + (y_id % 2 == 0 ? 0 : 0.5) + 0.5) * tile_size.width - total_width / 2;
         let y = (-y_id) * (this.hex_length + tile_extra_height / 2) + total_height / 2 - tile_size.height / 2;
         return v2(x, y);
     }
@@ -24,8 +23,12 @@ export class TileMap_Utils {
     public static get_tile_x_y_by_position(position: IVec2Like, tiled_layer: TiledLayer) {
         let layer_size = tiled_layer.getLayerSize();
         let tile_size = tiled_layer.getMapTileSize();
-        let x_id = Math.round(position.x / tile_size.width - .5 + layer_size.width * .5);
-        let y_id = Math.round(-position.y / tile_size.height - .5 + layer_size.height * .5);
+        let tile_extra_height = tile_size.height - this.hex_length;
+        let total_width = (tile_size.width) * (layer_size.width + 0.5);
+        let total_height = (tile_size.height - tile_extra_height / 2) * layer_size.height + tile_extra_height / 2;
+
+        let y_id = -Math.round((position.y + tile_size.height / 2 - total_height / 2) / (this.hex_length + tile_extra_height / 2));
+        let x_id = Math.round(((position.x + total_width / 2) - ((y_id % 2 == 0 ? 0 : 0.5) + 0.5) * tile_size.width) / tile_size.width);
         return v2(x_id, y_id);
     }
 
@@ -34,6 +37,11 @@ export class TileMap_Utils {
         let x_id = id % layer_size.width;
         let y_id = Math.floor(id / layer_size.width);
         return v2(x_id, y_id);
+    }
+
+    public static get_tile_id(pos: Vec2, tiled_layer: TiledLayer) {
+        let layer_size = tiled_layer.getLayerSize();
+        return layer_size.width * pos.y + pos.x;
     }
 
     public static get_tile_is_surrounded_by_gid(id: number, tiled_layer: TiledLayer, arr_gid: number[]) {

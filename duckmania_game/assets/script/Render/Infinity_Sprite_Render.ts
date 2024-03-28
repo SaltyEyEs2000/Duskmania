@@ -22,8 +22,8 @@ export class Infinity_Sprite_Render extends UIRenderer {
     _idx_render_data = 0;
     set_data(data: Block_Data[]) {
         this.data = data;
-        this._arr_render_data = [];
         this.resetAssembler();
+        this.markForUpdateRenderData();
         let minx = Number.POSITIVE_INFINITY;
         let miny = Number.POSITIVE_INFINITY;
         let maxx = Number.NEGATIVE_INFINITY;
@@ -100,12 +100,12 @@ export class Infinity_Sprite_Render extends UIRenderer {
         const assembler = Infinity_Sprite_Assembler;
 
         if (this._assembler !== assembler) {
-            for (const rd of this._arr_render_data) {
-                RenderData.remove(rd.render_data);
-            }
-            this._arr_render_data = [];
             this._assembler = assembler;
         }
+        for (const rd of this._arr_render_data) {
+            RenderData.remove(rd.render_data);
+        }
+        this._arr_render_data = [];
 
 
         if (!this._arr_render_data.length) {

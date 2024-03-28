@@ -52,7 +52,7 @@ export class Manager_Camera extends Component {
         let per_y = uiPos.y / rect.height - 0.5;
 
         let point = {
-            x:per_x * this.camera.orthoHeight * 2 + this.camera.node.position.x,
+            x:per_x * this.camera.orthoHeight * 2 * rect.width/rect.height + this.camera.node.position.x,
             y:per_y * this.camera.orthoHeight * 2 + this.camera.node.position.y,
         }
         Event_Dispatcher.post("mouse_move",point)
