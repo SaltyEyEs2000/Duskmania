@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="hexagonal" renderorder="right-down" width="205" height="127" tilewidth="88" tileheight="102" infinite="0" hexsidelength="52" staggeraxis="y" staggerindex="odd" backgroundcolor="#323232" nextlayerid="92" nextobjectid="134">
+ <tileset firstgid="1" source="Terrain.tsx"/>
+ <tileset firstgid="97" source="sea_area.tsx"/>
+ <layer id="10" name="国家划分" width="205" height="127" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAcDltsAAQ==
+  </data>
+ </layer>
+ <layer id="9" name="海陆划分" width="205" height="127" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztWltyIzkMc+z733m+UtNW+FRLfKjxgZpdx26TIEBSSj6v1+sDAIAJPwViAIBOgGcAwAd4BgB8gGcAwAd4BgB8gGcAwAd4BgB8gGcAwIerZ94F4gGACni//vvhPbz+M7zn/YJ3qqBTLU7Tzq83Rl+Mr/8M//95ncNBJ1C1yY5Ji7dLrBber17wgvJYZ06qQ6oZxXuFWlDxVohrRR6znpE8lJ2nV4fZsWhxar1rzCcrN83bUkzV6rDKK7NzyBpflhY5rY1nPE0ndzRGvWatW6ZXPPFacq3SyyL9MtNfIndeiw61WkpnP4/GqO/jZjn3Wsbuc2e/1z6b7Zno+TLjH27Py6411zs9fXR1D5PiidZahK6sOa3MvZJfLHrkft6xxtpcXfH8zJ4cqS3PnJ/lgtJiVf94uRrzrFZnaVeb2WmqeCS7H0tzn9tVZvWh9fROGHc6DzcZNV7x/RX8sYLPHfz/csN5aXbWzPa3iqDOQlbvZOQ+8j+rsRN8s0N/lL6pGXSNd9ZH2dq3amXMneoDkqcy+8VJe9iqOcN9RjuvWOpM1Vp7puSRLnPGwp2WS7ecx9jH+mV7I9IzWq8fvWB5vxQnt4t10I7F9zPPzM5rJQ+VMLtremaG5ANvnFy8Hbxh4XOFX7qji29mcnoPr0XkeoqOrHtldpy7OejqF6pHa3vQ1TNReZ6gIeuMPSHXUz1j9RCXV9Z86baLefZRS16dcvf6pcu5hvOMdGaJzG2M6fe1LlriuLLcXXB7QNVc73jmmlM374x11WofGYvkb4r3Cvrg/DJqhesN0uvZ+c3yMctbB4yeyY7HGm8VTVG1p/qp9ZzT3Tcez2Rr6Sm+qaQhbSfz8mnZTyvDGnd1jXlrVTmfqn1XmjOSRrS9s2KuVh60M022lp6EilrizvIWv1DPyc5ntWfgFXhF8w71WlffSP1A8s0J92Od4alZtra41z+vv9rpkI+2b8EvdVFZX6PGuNnBnV0qQrvf0HbRmTsQ4Nm+yY5lh18sNYFn6qCLDu96pornvHfkY/w499dABS2t1HzlnW1mzsAftVBJTxa9Wf1StTdYZwQ8UxsVtHTXMxYtVpg51jjhl28+smOgNJTth7u+mdnzM32zwzPSTtr5PFQt3vE+RtJjBb9Yf5fhqUV0/J6YZj4z9hCq33h2xGx9eusaGZfUtyv5RtMk1UulXhuZm1WnnlkzG7vHM1m9/spFRd9YZni2d6h+KvVVKd6MObOiHhxmY9FqHa1ZrpbZHvHUSfJ+hmc8vqji69k+bfHJrIesPrRoYocOZ/tNBd9I7830S2XP7NZX5C6ZMW86zBgpdslb0Vq80y8j44yqTbRvonLs7hlpR4usWaTuu3gmghfqO3bm2Gkvk+rC+Sirz1VFxL6f4ZvoXLkzazf/ZNSMe35F/2TUNJOHlbm+L/+OZ6cd35ftmYi6cH0n2yc7dVSBf2ufuDsHtJqeMmOuue6qA+WXClpZqZdK3K/gYbX/T/HKrrpR3Ff0DHfOy+C/Ag+rZs0TPLOybhTv3D574rm3m2fGOq30y/U8k81x1bqN/FPP516P1kk23xT/WVys4oObVxX5ruAbiRup30TqpHL9NM/s4mn1vVlljiPrZeFd8kQFz1SsJdWPLTxH+cbL2ZM8c8c3Ek/Ufpvhmap7QqU7M64u1Tirgrt14/RIaYJ7X5RnKurAM2t28sPVrhJXJ9RJ4pN7duY9QDW/ROev8VH9/J4Vz8oarfBMpG4q6qCCb6iaVebqffnvqO/b7RdJBxmeqdo3V9fkLjfW2lbga6ypZz5qn921K1t45c4zGftZdR1keYbz0Kx2M/jynJ2pWRrVtzy8Sn6BZ+SZXNkvM5+9y5OVk4i5sUuDV89wn43azbK9YdFDdo1n9ocZXazuLx0w6xnLnFl9T1HdL5R3dtaN42h2xkRx3dkvXs9ou+9Oz3hirYCoPdWyM8M38Tqkdgz4ZV6PK/1CeYX7mXdf3MV5B7/c3Vs53jkeduilm2citEHVRephM/Gs5r3CGX6HFi19itLGuCvs0Ecn70R4ZuSfquFKbVTmYwe/Hs9weuV0G3lHpMVSCVQ/2cWDVBfqM9bnP9U3VKzSLqy9b3x/pG86+WU3J6MnJb9wOtCe/0S/aHxJe7DGG9XronPK9gbFRbROpB5SZT87xTOa3q1+ycwpelejvpPbfyLnrhTrCn7vcpWt/9Xekd5r4aRKPhH+ob7PorndHEhY/R0nzxaN25ladOgfO71DcaHFEZl3NLder1bVjJbz2AesvbJj/4jY2Sr3j52cZscRna/lLDP6ZIarCtxG+ibyLAPEa0iq86r6R2nH8j27fYMZ9AyMZxTutbvfsTsHi18yPHNnRgN5kM5j2nyxPmvm+1fmZ/F4lmcwc/pB8gF3L0Y9Y/a7I/Lj4h7zzPZMthYAv6Y4fF689qrvFp74Mn1TlT+A1wnlk2s9udpW9stvfNb3ZZ9rsrkCbFri5gm1a3f0jIeP7B3tBB5PBbd/cXU83TPZXoFn+sDaW8f3nOobeAaQ9OHZRbR7s+6AXwCrTqR7Mm4/O2GmUFzc1Tt8cz6k31lKs+Uk76w4x6zwywlcPgVjragzC/We0Utd671S77OfO6X/PA3c3RhX0xPqfUfn42zwPKsrX8C3dqheqflm/Fl2HrN5z5w3PHf1OLOcBersYq1t5zkzO2M4DuCXZ0Gq+ck1np0xd57Tsb8Af+vN1ZzaQ7jPZ+exMm/vjMGceRa0ulv2r646sGpdy93ynK47LOCvu6XOHfXg0fn1M3eelZ0zsF5D1B2A5oVT7wE8+Wie6cgN4Ku71Qedf0djvfew7GXcnO7GCeDX0PXe2foZSjvZuXhytswG7f6D+11NNz4Av368+8jsZ6vAe8fOzZUx/45cADF4D/92gnbf5ZktuBcDvOimldl7Lm62dsodqIFu2pm55+Jewz0yMIMufrH+/pG6O9T2tOzcgF7ooBmPX3BnDOxEFy2tnC8AcAddNGU994/n/Oy4gfPQQVf42xYA8EH6uxbsYADwDc4v2XEBQEVQd2WYKQBAg/ubsOy4AKAi4BcA8AF/NwkAPkiegYcA4C+4v6fkfgYAT4f2d8nwDAB8A54AAAAAAAAAAAAAAAAAZvAPIrq0/A==
+  </data>
+ </layer>
+ <group id="12" name="国家颜色"/>
+ <layer id="13" name="新生地联邦" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2EFSAkEQRFHu4v3v6MJdC0q10GnCexGzn0X+qIHLBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgB0fywNct7aiGfjZrWZ0BN9NetEMfNENzOgFZjQDM3qBOc3AfXyXwZxu4H7T/5m1w7tYd77bipZ4F89qRDO8qlPN6IZXcbIZ3dDudC+6oZleYE4zcFvqrmiGRulONEOLdB+aoU26D+3QIt3DX5rRE6elW3jEndENp6Q78D1Gm3Wf6UY0RJN0DzqhTboN3dAi3YNmaJRuQjO0STex04yWSEn34P7QJL15rdAovX+90CS9f93QJr19zdAmvX3N0CzdwU43GiIp3YCbQ7N0B1qhTbqHa23ohv/ut70mb4duaJFuZX0PaOI3CcxpBfZoAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHikT8YBusM=
+  </data>
+ </layer>
+ <layer id="46" name="柯班诺" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJgEAMRcEtZvuv0avIKvmLByUzENJAHhkDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgO+ZigHurZrQDa0+9aIfurvdf7UU3dJO2oRfQDCT8Gah7oxfd0IlmIKMZyOgFMv4M1OkFcpqBzDxtfcA+vUCdXmCfbqBOL5DTDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/dgBnyiNx
+  </data>
+ </layer>
+ <layer id="47" name="塔巴斯科娜" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1rENACEMBEGaof8WPyVALxvIbka6Elb2GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOzMZcC/uRkk2rVQGaQ5bUUvJLrpRTOk0gzUuTPQoxmouW1FL6R50YxuSKEX6LlpRDOkcVOgTzNQpxc4oxno6bSiGwBe85dBn24AAAAAAAAAAAAAAAAAAAAAAAAAeOUD4+kh+A==
+  </data>
+ </layer>
+ <layer id="48" name="安格斯图拉斯" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEJACAQBEGrsf8STUwEhVfEwJ+BK2G5UgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCf2gfM1cWA0aoV7cAo2opmyGa3Dc2Qwa0u9EImt/vQCz/zH3BGLxCnBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4JUGZDYRqw==
+  </data>
+ </layer>
+ <layer id="51" name="塔莫约联合酋长国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJACAUQ0G3cf8NLcVGjI3Iv4P0aV5rAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB19NcH4BN9M2ClF8jtutEPTCet6AVWuoGcbiCjGchoBXKagXtaAQAAAAAAAAAAAAAAAAAAAAAAoJIBV1oMWA==
+  </data>
+ </layer>
+ <layer id="52" name="因雷克国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJADAMA0GPo/0nTJMmKYINKe9AoAW+CgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/sge0JPSDbykMeCkG+jL9XUCM5qBGc0AAAAAAAAAAAAAAAAAAADw0wK2KgVR
+  </data>
+ </layer>
+ <layer id="53" name="角族共和国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2iEOwCAUREGuw/0vWIFCkO6ngjTMJFWYmpcV0BoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBZ/fQPwI/0phmo6sEHDFqBOjsDNXqBXLIxuoFBL1Cz04yOuFHait2B771ohttoBWp2GtELt7InUKMZyOkDcjYFclqBnF6gRi9Q83bnoiGYrd5Yrs7gdm/vkjUDM00AAAAAsOMBhS4fjg==
+  </data>
+ </layer>
+ <layer id="54" name="洛诺伊斯岛" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENACAMBLHsk/33o6GiAH0qClu6Ea4KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmOgd8OYXyPQRcOcXyHgGMl4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+swA0sQKG
+  </data>
+ </layer>
+ <layer id="14" name="联盟远东" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEKxDAMRUEdyPc/3xbpAptIJrBs/kxrF2oeFrgKAAAAAAAAAAAAAAAAAAAAAAAAAOB91q8HgD+jGejTC8xoBvpW9ZrRFRwmzeiGdKt6LXTvwdutuu7hfK4d0n3r4KoVvZDu3MJdL5ohmV5gbtoNpNMMzHT2Mc3AYdqLZki304xuSLXbi25IpRmY2e1DLyTznsCMPQyecfe/CQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOT4AONIIYU=
+  </data>
+ </layer>
+ <layer id="15" name="雾原" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zEKwCAUREEv5P2vlyKNEI1+JUhwBrbf5qUEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8C7vPgA/kysDnmqtaAfaRprRDacrO9AM9I12ohu46QViNAMxmoE4zcAazUCcZmCORgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL5xAUPjFL8=
+  </data>
+ </layer>
+ <layer id="16" name="奥留申" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1zEKwCAMQFFPlPsfr2u1FhOXVngPAo5ZPsTWAAAAAAAAAAAAAAAA2BVfLwCHidsAazEZoDfrRDPwTiuQE8NbN/C0usM0Az3NQI1eYI9uIE8vUKMZyPOfgZqxCc1AnVagTjdQoxUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4rwuF7hal
+  </data>
+ </layer>
+ <layer id="17" name="洪佑" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENACAMA8FslP23o00HqRDhTnLv5iMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+krcPwCOyDNjTDJzTCvRoBvo0AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwGQLVWoCNQ==
+  </data>
+ </layer>
+ <layer id="18" name="武垅" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1rENwDAIAEGPxP7TRamSJjLgdNxJyCzwwmsBAAAAAAAAAAAAALdIDJBrRTfw0AzsxevtDEzTbUUzTHXajG6YQivQoxuo0Qr06AZqtAI1moE8fzKo0wzk6QXqNAN57gzUaQbOxMcOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/OsCW8crIQ==
+  </data>
+ </layer>
+ <layer id="19" name="望关" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENADAIBLFfif2XS0NHQ6ht6Ua4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCmOmCn4hv44RcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOkBGHkBWA==
+  </data>
+ </layer>
+ <layer id="20" name="中礁" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zEKADAIBEHf5P8fZx9CChuRzMD112wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA33L6ACySx4A3zUCfZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7gruEQH1
+  </data>
+ </layer>
+ <layer id="21" name="石城" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1rEJADAIRUF3cv/d0oYUwV+FwB3Y2zy0CgAAAAAAAAAAAAAAAAAAAIBEv14APqMZyPQ2wF2XZiClGZjTC2T8ZpDRC2TcGZg5W9ELzGgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgB8tM84Gxw==
+  </data>
+ </layer>
+ <layer id="22" name="边区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zENADAQxLADdfyxdSmAf3XoYkuBkAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgXW/ATOMbmGo8AxuegTm/wJ5fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgvwP1fwPd
+  </data>
+ </layer>
+ <layer id="23" name="雷州" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJADAMBLFfyvuvljakcRo3RoIb4RIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGCzugJ6Fd/Ar/cTzwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMw7H0YCEw==
+  </data>
+ </layer>
+ <layer id="24" name="镇边" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJACAMAEGnyv6jWWijqBiwkjv4Eb4UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgtegBd2IKOPMM5HgGcjwDOfMzvoHR6hHPwN7NM76Bxi+Q5xkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4RwXV4Azf
+  </data>
+ </layer>
+ <layer id="27" name="万科尔" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2LEJADAIRFG3cv/N0qSM4HUp3oMb4YNYBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/qO2BHM7DTjwEzzUBOM5DRC+Q0A3t6gZz7DPb8ACCnGchoBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDJAXivB70=
+  </data>
+ </layer>
+ <layer id="28" name="自由区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENACAMBLGMlf0no6V4kKAEW7oRrgoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBX9RSw1yEgS794Btb8Anf8Amc8AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8I8BkLwFCQ==
+  </data>
+ </layer>
+ <layer id="29" name="人民阵线" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1zEOgCAQRFGv5f0vZmNFiJmJVu57CR10/CwcBwAAAAAAAAAAADDdea9mb3MG/iS9/2sremGytYFdF7tmtMNUTz0kCybSDHQ0Az3NQMZ/Bnq6gczbVvTCRJqBzBczRjNMohno6AU6moGcVqBjxkBHM9DRDGTSu7/boxUmauaERsDbCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACY7QIXikRc
+  </data>
+ </layer>
+ <layer id="30" name="秋明" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKwCAQRUHP5f0PliIBMdG4C5ImM/Cb7R9bCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMC36rXRHRi7d1MHN6CpkwG9WSuagd6qFb1AE+lFM3DSC+TpBnKizWgHmmw3OuLv9AI5eoE4PwZy9AI5qx60Ak9vTWgG4rQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADsdgCwTCWd
+  </data>
+ </layer>
+ <layer id="31" name="维拉米亚军区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt06ENADAIAEEGY/+5sBUgECQVd8mP8BEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9/IJmOUQ0PMM7HgF9rwCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAbwr7TASx
+  </data>
+ </layer>
+ <layer id="32" name="喀山" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJwDAMRUEv5v3XSpHCLoz5iiEEcgdq1D+QWgMAAAAAAAAAAAAAAAAAAAAAAAAA4Ev6NPMOWOubAYZdK7qBNd1AjV6gRjOQ0Qrk/DCQS3vRDNwqzeiGv9MK1GgGcm4yqNMMPKMVOKcZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADecgFygCKO
+  </data>
+ </layer>
+ <layer id="33" name="图拉" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07kNADAMxLCbzPuPldZIkac2CWgEJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPNUCzireAZe7K/4Be78AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbwEdCQOj
+  </data>
+ </layer>
+ <layer id="34" name="瓦图拉" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEJACAMRcFslv23shQhilYi3sHv0zwSAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAL/L2AfCIDL3AiQzdwI4sBnRVI1qB0aoTvUBt1ohmoOanwDm9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NMkHCRw=
+  </data>
+ </layer>
+ <layer id="36" name="奥洛茨克" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt06ENADAMA8GM5v2nKi1sURTlTjJ/4ioAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYJ90BMESuAW9SPgM/0h0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMMcxWQBwQ==
+  </data>
+ </layer>
+ <layer id="37" name="格里奥克" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEJADAIRUFXc/+lsoBCLEIQ7uD3Ng8jAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgvfx9ACyToRu4kcWAnmZgRjMwpxm4U/0YzUBPMzCjF5jTCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDNAcrPCmo=
+  </data>
+ </layer>
+ <layer id="35" name="乌兰" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt08EJACAMBMHUlv6L8h9QDCgizMD977MRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACckK8PwAeyDJirvegG1vQCPXqBfVqBPs0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAXQNSKQZz
+  </data>
+ </layer>
+ <layer id="39" name="希观-库尔坎国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2DsKACEMQEHv5v3vtM0WIiLxU5kZsLP0obEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAdfVfQIxmYK5tpHYLMuo7WFmQlW4g5qQVzZCRZiBOLxCnF4g7aUMzZHV6l2iG14zO9K33l3uGV7Vn+/bcohleY8aHdTuzPWTW9+E+gbmdd5iWyC7yBzDaD9mZ9yHOHxms0wzs0QcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJDVB4h/Qjg=
+  </data>
+ </layer>
+ <layer id="41" name="库伦" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJACAQBMEr7vuvycToQUVMDGZgS9gEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+VTPgrOIZ2Ol/VHwDK/0Pj8CaX+CeVwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeDH5wBh0=
+  </data>
+ </layer>
+ <layer id="40" name="卡尔玛尼亚" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1sEJgEAMRUGb2/5b8uJF3YV8FTxkBgJp4JFsGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE+NY4CaMRlgbtaLZuBs1Ylm4E4vUFNpRTd0ljaiGTrTCqyNy64XWHvbiGboRC+Q0QxkNAO5LxrRC524GZDxa0GdXiCnF8hoBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgXzsacTn0
+  </data>
+ </layer>
+ <layer id="42" name="帝国禁卫军领" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1rENwCAMRUFPx/4jUdAkIIjdhjvJIzx9RwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDd2uOAvRZ6gYq5Gf3A3qkX3cAq04xuYNAL5GV70Q23+2pCK/BmRyDH3wU1OoEavQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8UweODxc/
+  </data>
+ </layer>
+ <layer id="43" name="上砂霜总督辖区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1UEKwCAQBEF/5/9/lPsSo4OBEKyCve+lmdYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKj61w/Aj/RywLPajG5g7q4b7cDYqJmVjrTFqZJubBJoBlJ6gXU2Btbt9qIZTqMZyGgGMnqBjGYgoxXYpxnI6AUymoGMPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN51AdlfO+k=
+  </data>
+ </layer>
+ <layer id="44" name="下砂霜-象牙岸省" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJACAMBMGUZ/8V+Q9GSF4KM3AlLBcBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC3lQbUci+agTvNQJ9moOf0NRqCmmZgTjMwoxUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBFG18JC0E=
+  </data>
+ </layer>
+ <layer id="49" name="乌巴利塔" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJwCAQRFHbs/+GcsklGNZdhUDwPZgSPtMaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwH/1e0CsBwNGmoE8vcBT1MRscBqtQJ5/gTy9QI1mIG+nF81wKs1AnWZgjWZg31snmoE6zQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwpQu8yC3q
+  </data>
+ </layer>
+ <layer id="56" name="洛哈共和国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1dsJwCAUREHrs/+C8p2g5mUguDNw4TZw2FIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg32rngL1eK3qBNs3AdXqBc/Xwawb6Ro20mtEO6e40Y3NIpxcYe9qIZkg0qxfNkGJmM/phZV+1ohlW9aYDfZDGZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQKYNrLA2Dw==
+  </data>
+ </layer>
+ <layer id="55" name="巴奎拉特总督辖区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1jESgzAMRUEOyP3PkyZFCkP4OODI7M6oM53eiGUBAAAAAAAAAAAAAAAAAABmtL4HZnPFXq+NgVlcsdOtZnTDLPb2eWv3tzpI30NFvc18fp+81w9V9dyMXw1U0trdO3vRDNX0/l9phae5+6Z8u2vwz0b24u5Q0ehG9EI1OoGcZuA4nUBGJ5DRCmT0ARmtQEYzcJxeIHe2E83wRO4KnKcZyOkFchqBjF4gpxkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgDFekXiarQ==
+  </data>
+ </layer>
+ <layer id="58" name="图兰埵保护国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEKgFAMRMFc8N//OjYWosXPio1kBpac4EGqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5nnQOe1mZV+oFdJ/deNMN0STMwVbcTzTDZm050w0RagZxmoE8vkPGbQZ9eIPNFM7phknW5uoGMXqBPL5DRDGQ0Ae9pBTJ6AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJjlAE9pR0o=
+  </data>
+ </layer>
+ <layer id="59" name="莫希亚汗保护国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07EJAEAIBEErtP9yvgAfwUiEGbj8ko0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgKrcPwDEZuoGfbAZUXTO6gUorMKcXmNELAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADseHYHCXM=
+  </data>
+ </layer>
+ <layer id="57" name="格登兰总督辖区" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zENAAAIwDAc4t8NFiB80CaTsAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALgth8F3foEZT0CfTwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYK8AsmoIVg==
+  </data>
+ </layer>
+ <layer id="60" name="极北殖民地" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt18EJACAMBEFLtP9qfBskGBBBnIGUsBxpDQAAAAAAAAAAAAAAuKWHA2axEb1ATi+Qy3Zl1Yt++NFOJ7EZu8OPqq34bUA3UKUXOEsvUKMNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeM8AmHUisQ==
+  </data>
+ </layer>
+ <layer id="61" name="摩亨佐保护国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2bEJwDAMRcGs6P2XSRMIKQxfscGF7kAjPITl6wIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4azwDzI3JAK9ZJ9qBr0oruqG7v73oho5We9EMXexoRTN0sbMXzdBJpQXtQJ1eoMaegYx3DWTcAiDjfgZ1uoGcXiDjfxMyWoEazUBOI7BOM1CjFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgpBuqnlk7
+  </data>
+ </layer>
+ <layer id="62" name="库尔瓦塔保护国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1cENgCAQRUFrpP9iPOjBoBIW0YM7k/zQwL6wLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAl8o+oK1UA+7VvWgGNldttAaZRXvRDNmNNKMbstILxIw209uOzviLp634n8hGM9BPKxDTummtwJlW4B3l8OoG+ugFYrQCc2kFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGCeFX/SVD8=
+  </data>
+ </layer>
+ <layer id="63" name="下砂霜-亚马尔省" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1zEKwCAMQNHc0fvfpZR2LGmC7aLvQRbBzY8aAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABzxj1ATivwbhQnQk9wqjajF7hoBno6zWgKvm1GO6xOL1D3Ry86YmWagZ7OOc/Wsv3aYSWz94I7hd14S0GdXqDn6b8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsKMDaYJCeA==
+  </data>
+ </layer>
+ <layer id="64" name="下砂霜-梅西耶" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEJACAMRUGHzP6zWIqgkCCC4B1YmP7xWwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID3xeIfizv8LBIPGDQDeVqBGhsDe5k+9AIzzUCNXqBGK5Bzsi064kc2BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgvg4XXx/V
+  </data>
+ </layer>
+ <layer id="75" name="西弗拉格诺斯联邦" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJwzAQRFE1qf5b8SEBO0SxZnLy4T1YtoLPjAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADPM98H7OkFOnqBjH2Bzhy6gZRWoGNjYG8uDlhb9aIZWNML5H71ohv4phfIzcvXDNyzL9DTDeR2vWgGPmkGcnqBTtKMbuCUNqMbeNEMdDQDHc1ARy/Q0Qx0NAMdjUDOrsB/9AI5vQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3DsAckVDvQ==
+  </data>
+ </layer>
+ <layer id="76" name="东弗拉格诺斯联合王国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEOgzAQRUGfcu9/lBQpQCY2+ysUMSMhKGme1t4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBZ9fQPwB+p0wPs6QUymoG+GpqBxNyMbmDtVy+agTXNQEYzkNMN5DQDGbMGMpqBvlUvmoGrXS+agauavjUDe3V63zWjId7u7lymGTjMTegF9pIZ424DvV7sA+CrM2Ps0OCgF8joBfp0AhnNQEYvkNMK9OkFclqBjFYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADe4wMtmUfl
+  </data>
+ </layer>
+ <layer id="77" name="破碎洋角族军政府" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt00EJADAMBMFzGf9OaqGBQhOYUbCfTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOnqdwAsU/ENdHkGejwD9/wCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG8dDw4CCw==
+  </data>
+ </layer>
+ <layer id="78" name="帕拉狄乌斯自治领" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt1UENAAAIAzFk4l8JGngQCGkV7HNZBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADckNsDAHjP10CPZqBPNwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwLQCsZoBYQ==
+  </data>
+ </layer>
+ <layer id="79" name="埃尔斯沃斯自由邦" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEKwCAQRcG95r//RdKKha5FCIYZkLW0eYhWAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANwrXx8ALpFhAXuagb6UZgB4lzsGzmkGznjTQJ9/AOibe9EMrGWYuoG1THu9wF6mCQAAAAAAAAAAAAAAAAAAAAAA8AcPKgoM3g==
+  </data>
+ </layer>
+ <layer id="80" name="阿尔比恩第二共和国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zERADAMAzHjDH8gHVoA8dZBunsInwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwDUvYGfiG2j4BTp+gT2/QMcz0PEMAAAAAAAAAAAAAAAAvznJ8APf
+  </data>
+ </layer>
+ <layer id="81" name="奥特亚罗阿王国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENACAMA8Hsmf33oKUDV4C4k9y7+SoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgH/16QPwCK3Avp4GrOkFMpqBjGYgpxsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC43wBXTwSg
+  </data>
+ </layer>
+ <layer id="82" name="维尔克斯王国" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt0zEKACAMBME8NP9/h30aDYJBmIHrr9kIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4L6cPwKe0A+eyDNjTDfToBfp0AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHBvAZAlBcE=
+  </data>
+ </layer>
+ <layer id="83" name="圣塔提诺邦联" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEOwyAMQFEuyv2v0TGVwGBnqSq/JzFlYciXQYwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALA3f70B+BPza+2+Aau5WWPELUF3p140Q1fRv3/rRTN0depgdzbTCt1FXZwWdKYZyInuKJqB1ZtONAO6gSxzBup0AzWZN8tdI9qhs0wPmoFVNFduswY6up3HzBV4uOdDnW4gL9OLfuDhTQbqtAJ1moEavUCNTqBGLwAAAAAAAAAAAAAAAAAAAAAAAMAbH0+XXnU=
+  </data>
+ </layer>
+ <layer id="84" name="北岛联盟" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEOgCAMQFFP6v2P4a5GWqmD5b3EzTjxA8VtAwAAAAAAAAAAAAAAuLdPPtlvwR9UrfeKB/5ktH51Au/oBuboBXI0A1fZ+Sb6nmboqGLf0Aor+OJcpRU6c6aCMXM7xLjngpjqu2Fd0d3sv5VzI/YjOhs1UNURdPF1M7qhk8ha1wtcZeaTaCeaobOnvSGzj+iE1dyt9+z5SzeszrwCeZoBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC6OQBdyooR
+  </data>
+ </layer>
+ <layer id="85" name="凯尔喀克斯自治邦" width="205" height="127">
+  <data encoding="base64" compression="zlib">
+   eJzt10EKgCAURVF36v530bSE0l9R6D8HommDd9FKAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+Eb9+wNgErXoBSJq8wB9moG4p81ojmwim2/vc84pshrZ/FUvmiGbq833WtEPWZ1t/U4zumF1IzvXDRy9fT/TDqtrt11373b7vR60QkbOCYjRDMT5VwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAYbFH0ryw==
+  </data>
+ </layer>
+ <layer id="50" name="极地" width="205" height="127" tintcolor="#c8c8c8">
+  <data encoding="base64" compression="zlib">
+   eJzt1duRwjAMQFFXkP7LpYFgLFvEj5wzc38YCEZaz16llEuSJEmSJEmSJEmSJEk6tNLweqm8T+vsbMV2Omvr7+kx+9xvLnMXkWf0fm/WWWc36qRZ7FBtDxn7jX53z5lnzzB79tlm/87oPGafY3Rvo/u9+3zLM6PnnT3H0Tk/5amzZj6vZ9YjO/r22up6zvhrT2+8I6eo/X23fsa+xrgz57Or/8j6P8+aWndITGR+5rwn9wTi3Blo564AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBePscCqHE=
+  </data>
+ </layer>
+ <objectgroup id="67" name="滤镜" visible="0" locked="1" opacity="0.2">
+  <object id="5" gid="100" x="44" y="9804" width="18040" height="9804"/>
+ </objectgroup>
+ <objectgroup id="6" name="海洋" visible="0" locked="1">
+  <object id="2" gid="97" x="44" y="9804" width="18040" height="9804"/>
+ </objectgroup>
+ <objectgroup id="8" name="海岸线" visible="0" locked="1">
+  <object id="3" gid="98" x="44" y="9804" width="18040" height="9804"/>
+ </objectgroup>
+ <group id="73" name="Group Layer 6">
+  <layer id="86" name="城市" width="205" height="127">
+   <data encoding="base64" compression="zlib">
+   eJzt3WeO3DAMhuE9yrd7/0MGi2AAx3FRIUVKep8/2YxVaBV3z3x9AQAAAAAAAAAAAAAAAAAAAAAAwNNPdABw89a39H0+9AkAoAf7EaziaSzLoAysj/6Pp+gAGtWMnd3G2W7rCwCjzLx9nTl22GIswIvX2FLjskjMs/VF93F0/VcyxoT8FB2AE4/5IIcyMa/vyvTyCMLR6H0K+zAouP7zGGRM+lJ0ABt420/V7Mei5wP3IlFL0QEMpsXq8aSKtGxP/pJxebRrHvRFPb38vyTPxyrtr+gAMFyWsSvH9BbPYlvK0uaw99S3x2UqLK80XWkMnq7q1eggJqfoACajw987bFfv1nHFdV9xnWopqL7R9WbGOMxJhemu7pWU9GntswK1ddSel1x9VrO8NW9PuViXogP4yhEDsIKe52hkGMcZx19/ZWqHllhkHcTBOZ6rukYc8/Ua0ccaUMdIig5gIJ3+/3RN+fsm3Zts90tqzBx7VooOoEGmfeUTPSx7W4enfdVTua1maVPMRQF1jh7LGlxfZtm2I2rMx/3uf6kzfc+4yDamdld7Ht1z3q2bz3vOBWrus7+VVcu6vJ6ya9OjX7ZraxmUXN/zqqs3XTaKDqCQjMrJ8k689bVlGZdXw7tNZ51bEaLvWUTJ8CykGpcBkXTzee3cuSunpCyrecq+Ym6KDuBA0QFgW7Mfx/Vuh7n+62u1NlJ0AAF6thGW2xfvY7fVxir8ZBor1rHIuDwgyuzHt70yr78uPruL9ypti0zb7aPSuNSR32oseF5jW/0+qLWodlBQvdE0SV3cK51TRLvqYdmIeH5u/o6m6ACSknP55+OU6GNYJSm7Ju2vlrmUaf5lFtlOCqx7tOjx2FO/rIJIVldGaszX8v2Yo7zt9z6x1+4fo+fUUaZYSig6AGOztX8pHf6umR96TdGupezW/lm1X2eXpV9UmO5p7ng8e5OlfYAaV/Pk85le8o54HuUthjvMx3e0UblV2mqV9ZiFkpbl6TjGnvYvd2QXypKYw/V6n1NZ3dO9TA2MI7Ns8y7yHZKsNDgfMIuSe0YrbhMyUEde+sSfKtJmeW9l1XGRdb2yxvWR6bcsR+PdyP8pOoAL6sxv1Z8yKseCxxjdddzvut7W1JjPs/3vrht73Y8f9Z1M2Sk4P+woOgAsRwPqWG1bq+D8UXr6Mfp9qlojjkEyGflOwrl87/oy2Ok7QNWZ32Jb0RvDrBQdAFJSdAATmmFbe0XRAQATGvU78Fm2K1niwBp2HU8e53a7tiU4fvtQdACYXtbfmPzU8RafXpZ7iqwbfma7F2OB4ylckfPyaCO/k5c5tidFBwBM4mobqdFBbEjRAQCNNGnZyIt37vZaV9xTdADA5Ha8phyN/RdWwW8wwoqiA5gA82hPO/W79/fGtuZDfqPeBQBmxPl+v532xdibBtbFvFofzx0CKKXCdJnfx4EvRQcwARWm4/wQTxQdQBIcu2IH3N+HBXXkXWVs1azHXVoZxAGsbJXtBWDt5/TvLwXEAQC7UXQABjQoDwBgDyXn7ZzbAwAAAAAwJ0UHAAAAAAAvuBcJAIig6AAAAAAAAAAAAMCW/gAaVjP/
+  </data>
+  </layer>
+  <layer id="71" name="首都" width="205" height="127">
+   <data encoding="base64" compression="zlib">
+   eJzt2YEVgjAMBUAWcf81HUB9Aq+lzc/dAlLMT1I9DgAAAAAAAAAAAAAAAAAAAAAAgCyv1Q8AAABAe+6mMJZMwVj/MiVzQEd633XeGfx2Jh8yBHPIFnySCwCeYN6Q5m5Nr8zCt8/2nxAAM5gfpKi48z0l7Yxp5wFw36cDdQz1yTHsTUYBnqf3ArDaqFlkppFEPQOQxmyDWmQWMsgyAMB5dqc9JH8PyWcD4B6zAXLIM9WoWQAAAAAAAIDa/O8LAOzKnnKddwYwlz4LvekBAABUZI9lhSfqrkJtV3hGgFX0SAAARrNjAgA7sqMAAAAduPsAAAAAHflNBAAAADK58wPMl9BrE84AAAAAAAAAAAAAAAAAAAAA0MUbr/kGdg==
+  </data>
+  </layer>
+ </group>
+ <objectgroup id="70" name="城市名">
+  <object id="6" x="8184" y="4543" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">大都会</text>
+  </object>
+  <object id="7" x="11924" y="4851" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">维尔特霍普施塔德</text>
+  </object>
+  <object id="8" x="8052" y="2926" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">华廷</text>
+  </object>
+  <object id="9" x="9284" y="2926" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">龙门</text>
+  </object>
+  <object id="10" x="8932" y="3234" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">雷州</text>
+  </object>
+  <object id="11" x="8492" y="2156" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">妙义</text>
+  </object>
+  <object id="12" x="9680" y="2541" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">望关</text>
+  </object>
+  <object id="13" x="9944" y="2695" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">峤疆</text>
+  </object>
+  <object id="14" x="12012" y="5082" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">奥列昂尼</text>
+  </object>
+  <object id="15" x="8052" y="4389" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">普罗维登斯</text>
+  </object>
+  <object id="16" x="8184" y="4697" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">腓栗</text>
+  </object>
+  <object id="17" x="7832" y="4543" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">波登兰</text>
+  </object>
+  <object id="18" x="7920" y="3927" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">洪定</text>
+  </object>
+  <object id="19" x="7084" y="3542" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">阵风湾</text>
+  </object>
+  <object id="20" x="7172" y="2926" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">柯立根</text>
+  </object>
+  <object id="21" x="9944" y="3157" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">镇边</text>
+  </object>
+  <object id="22" x="9460" y="3542" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">云芝</text>
+  </object>
+  <object id="23" x="8140" y="3542" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">浒尧</text>
+  </object>
+  <object id="24" x="8624" y="5159" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">利勒瑙</text>
+  </object>
+  <object id="25" x="8712" y="5929" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">弗林特</text>
+  </object>
+  <object id="26" x="8096" y="4851" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">坎侬</text>
+  </object>
+  <object id="27" x="8932" y="4466" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">伐尔丹</text>
+  </object>
+  <object id="28" x="6996" y="4004" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">奇姆</text>
+  </object>
+  <object id="29" x="6336" y="3465" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">婕城</text>
+  </object>
+  <object id="30" x="6292" y="3696" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">圣诺顿</text>
+  </object>
+  <object id="31" x="5984" y="3773" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新锈山</text>
+  </object>
+  <object id="32" x="5588" y="4312" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">洛埃溪</text>
+  </object>
+  <object id="33" x="5676" y="4543" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">拉斯里维拉</text>
+  </object>
+  <object id="34" x="5808" y="5929" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">乌巴肯</text>
+  </object>
+  <object id="35" x="7216" y="5929" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">阿拉莫斯</text>
+  </object>
+  <object id="36" x="6248" y="5775" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">胡渡</text>
+  </object>
+  <object id="37" x="7568" y="5621" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">哥伦</text>
+  </object>
+  <object id="38" x="5060" y="5544" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">狮鹫市</text>
+  </object>
+  <object id="39" x="9196" y="3234" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">南岭</text>
+  </object>
+  <object id="40" x="8888" y="2541" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">洪佑</text>
+  </object>
+  <object id="41" x="9372" y="2464" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">中礁</text>
+  </object>
+  <object id="42" x="12188" y="4928" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">诺尔玛</text>
+  </object>
+  <object id="43" x="12232" y="4697" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">塞库图姆</text>
+  </object>
+  <object id="44" x="11836" y="4774" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">卡莉娜</text>
+  </object>
+  <object id="45" x="11572" y="5082" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">华洛亚</text>
+  </object>
+  <object id="46" x="10780" y="5621" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">科尔切斯特</text>
+  </object>
+  <object id="47" x="11748" y="4928" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">泊塞乌斯</text>
+  </object>
+  <object id="49" x="11748" y="5236" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">林寇尼</text>
+  </object>
+  <object id="50" x="12716" y="5082" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">罗萨利亚</text>
+  </object>
+  <object id="51" x="12364" y="4928" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">温多伯纳</text>
+  </object>
+  <object id="52" x="11176" y="5698" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">埃尔喀兰科</text>
+  </object>
+  <object id="53" x="11352" y="4697" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">伯尔根</text>
+  </object>
+  <object id="54" x="12628" y="3311" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">狄奥多里特霍芬</text>
+  </object>
+  <object id="55" x="11176" y="3157" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">秋明</text>
+  </object>
+  <object id="56" x="11660" y="3850" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">库伦</text>
+  </object>
+  <object id="57" x="10868" y="3696" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">图拉</text>
+  </object>
+  <object id="58" x="11000" y="3927" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">瓦图拉</text>
+  </object>
+  <object id="59" x="10120" y="2849" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">阿列雅</text>
+  </object>
+  <object id="60" x="9152" y="2233" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">石城</text>
+  </object>
+  <object id="61" x="9900" y="2310" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">帝眷</text>
+  </object>
+  <object id="62" x="10164" y="1540" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">北辉</text>
+  </object>
+  <object id="63" x="9636" y="1232" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">扶余</text>
+  </object>
+  <object id="64" x="9284" y="1540" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">吉江</text>
+  </object>
+  <object id="65" x="8272" y="2079" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">白木</text>
+  </object>
+  <object id="66" x="8668" y="1540" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">幸岳</text>
+  </object>
+  <object id="67" x="8712" y="2387" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">稻辉</text>
+  </object>
+  <object id="68" x="10340" y="3388" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">万科尔</text>
+  </object>
+  <object id="69" x="12232" y="4081" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新库尔坎</text>
+  </object>
+  <object id="70" x="16368" y="1771" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">菲尔希纳</text>
+  </object>
+  <object id="71" x="16896" y="1617" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">达戈贝特</text>
+  </object>
+  <object id="72" x="9592" y="3157" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">临边</text>
+  </object>
+  <object id="73" x="8800" y="3003" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">胜岱</text>
+  </object>
+  <object id="74" x="9548" y="2156" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">乔鞍</text>
+  </object>
+  <object id="75" x="10560" y="2310" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新伊尔库茨克</text>
+  </object>
+  <object id="77" x="10208" y="2541" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">团结城</text>
+  </object>
+  <object id="78" x="6864" y="4081" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">杜兰特</text>
+  </object>
+  <object id="79" x="7568" y="3465" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">阁溪</text>
+  </object>
+  <object id="80" x="11836" y="3542" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">埃卡德琳</text>
+  </object>
+  <object id="81" x="11968" y="3311" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">乌兰</text>
+  </object>
+  <object id="82" x="12012" y="2926" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">利沃夫</text>
+  </object>
+  <object id="83" x="11308" y="3311" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">德米特里城</text>
+  </object>
+  <object id="84" x="10604" y="2618" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">维拉米亚</text>
+  </object>
+  <object id="85" x="10868" y="1463" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新涅夫斯基</text>
+  </object>
+  <object id="86" x="11440" y="3773" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">萨赤</text>
+  </object>
+  <object id="87" x="11572" y="1309" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">塞贝斯格勒</text>
+  </object>
+  <object id="88" x="11660" y="2618" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">伊戈尔</text>
+  </object>
+  <object id="89" x="11792" y="1925" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新青市</text>
+  </object>
+  <object id="90" x="11704" y="3003" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">塔乌提纳</text>
+  </object>
+  <object id="91" x="10604" y="2002" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">雅兰苏</text>
+  </object>
+  <object id="92" x="10340" y="3696" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">希纳察</text>
+  </object>
+  <object id="93" x="11572" y="2310" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">先锋市</text>
+  </object>
+  <object id="94" x="10164" y="3234" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">塔季姆</text>
+  </object>
+  <object id="95" x="12452" y="2926" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">卡缅</text>
+  </object>
+  <object id="96" x="7964" y="3234" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">卿云</text>
+  </object>
+  <object id="97" x="11176" y="1925" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">夏伯阳</text>
+  </object>
+  <object id="98" x="8360" y="3619" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">孤难港</text>
+  </object>
+  <object id="99" x="7788" y="2002" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">胜极</text>
+  </object>
+  <object id="100" x="9240" y="1925" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">胤伊</text>
+  </object>
+  <object id="101" x="9988" y="3542" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">霜丹</text>
+  </object>
+  <object id="102" x="11484" y="4466" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">瑞哈文</text>
+  </object>
+  <object id="103" x="11088" y="4851" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">凯娜</text>
+  </object>
+  <object id="104" x="7392" y="8085" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">德兰达</text>
+  </object>
+  <object id="105" x="7304" y="8239" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新迪亚戈</text>
+  </object>
+  <object id="106" x="7788" y="7700" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">帕纳伊查</text>
+  </object>
+  <object id="107" x="7568" y="5082" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">豪诺索尼亚</text>
+  </object>
+  <object id="108" x="12408" y="4312" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">哈罗德维克</text>
+  </object>
+  <object id="109" x="11000" y="4543" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">哈拉尔德</text>
+  </object>
+  <object id="110" x="12760" y="4774" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">奥斯特马克</text>
+  </object>
+  <object id="111" x="12628" y="3696" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">瓦兰吉</text>
+  </object>
+  <object id="112" x="8008" y="7623" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">库希古姆</text>
+  </object>
+  <object id="113" x="7480" y="7777" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">鲁奇雅</text>
+  </object>
+  <object id="114" x="6160" y="8239" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">卡米尼亚</text>
+  </object>
+  <object id="115" x="5588" y="8778" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">诺伊莱塔</text>
+  </object>
+  <object id="116" x="7832" y="7931" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">库南贝</text>
+  </object>
+  <object id="117" x="7524" y="7392" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">安贝雷</text>
+  </object>
+  <object id="118" x="7304" y="7623" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">马拉霍</text>
+  </object>
+  <object id="120" x="6248" y="6776" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">卡拉尔苏佩</text>
+  </object>
+  <object id="121" x="7304" y="7931" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">伊拉塞玛</text>
+  </object>
+  <object id="122" x="7084" y="8085" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">乌比拉哈拉</text>
+  </object>
+  <object id="123" x="6952" y="8085" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">瓜拉尼</text>
+  </object>
+  <object id="124" x="6600" y="8393" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">埃拉斯莫</text>
+  </object>
+  <object id="125" x="6292" y="7931" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">托德西拉斯</text>
+  </object>
+  <object id="126" x="7480" y="8008" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">帕尔马雷斯</text>
+  </object>
+  <object id="127" x="5764" y="8393" width="176" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新伊莎贝拉</text>
+  </object>
+  <object id="129" x="5852" y="7854" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">皮萨罗</text>
+  </object>
+  <object id="130" x="5060" y="9086" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">圣科特斯</text>
+  </object>
+  <object id="131" x="8976" y="6391" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">哈图伊</text>
+  </object>
+  <object id="132" x="5588" y="9240" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">新斐迪南</text>
+  </object>
+  <object id="133" x="7348" y="6314" width="88" height="25">
+   <text fontfamily="Abadi MT Condensed Extra Bold" pixelsize="18" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">乌坦祖玛</text>
+  </object>
+ </objectgroup>
+</map>

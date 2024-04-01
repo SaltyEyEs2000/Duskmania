@@ -3,10 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
+    "activeFile": "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/worldmap.tmx",
     "expandedProjectPaths": [
-        ".",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap"
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap",
+        "."
     ],
     "fileStates": {
         "": {
@@ -33,10 +33,13 @@
             }
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/#1.tmx": {
+            "expandedGroupLayers": [
+                12
+            ],
             "scale": 0.05939922480620155,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 8973.181076672105,
+                "x": 8939.510603588908,
                 "y": 4107.797716150082
             }
         },
@@ -54,8 +57,8 @@
             "scale": 0.03125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 13248,
-                "y": 1504
+                "x": 9984,
+                "y": 1392
             }
         },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map1.tmx": {
@@ -66,10 +69,29 @@
                 "y": 4896.714358712314
             }
         },
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/worldmap.tmx": {
+            "expandedGroupLayers": [
+                73,
+                12
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 60,
+            "viewCenter": {
+                "x": 9648,
+                "y": 4752
+            }
+        },
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "D:/jianle_out/Terrain.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "D:/jianle_out/sea_area.tsx": {
+            "scaleInDock": 1
         },
         "city.tsx": {
             "scaleInDock": 1,
@@ -84,8 +106,8 @@
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1393.939393939394,
-                "y": 1327.2727272727273
+                "x": 1015.1515151515151,
+                "y": 15.151515151515127
             }
         },
         "map1.tmx#duskmania": {
@@ -93,7 +115,7 @@
         }
     },
     "last.exportedFilePath": "D:/jianle_out/Duskmania/tile",
-    "last.externalTilesetPath": "D:/jianle_out/Duskmania/tile",
+    "last.externalTilesetPath": "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap",
     "last.imagePath": "D:/jianle_out/Duskmania/duckmania_game/assets/pic/world",
     "map.fixedSize": false,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
@@ -106,16 +128,18 @@
         "map1.tmx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx"
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/worldmap.tmx"
     ],
     "project": "map1.tiled-project",
     "recentFiles": [
-        "map1.tmx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
-        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Chimaera_World_Map.tsx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/#1.tmx",
+        "map1.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/·····.tsx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Terrain.tsx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/worldmap.tmx",
+        "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/Chimaera_World_Map.tsx",
         "D:/jianle_out/Duskmania/duckmania_game/assets/pic/tilemap/map1.tmx",
         "duskmania.tsx",
         "D:/jianle/goose/assets/sub_1/tilemap/map01.tmx",
