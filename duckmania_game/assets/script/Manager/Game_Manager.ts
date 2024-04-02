@@ -94,13 +94,15 @@ export class GameManager extends Component {
                     let image_type = this.map_name_type[layer.getTileSets().find(v => v.firstGid == tile)?.imageName];
                     let tile_pos = TileMap_Utils.get_tile_x_y(i, layer);
                     let world_pos = TileMap_Utils.get_tile_position_by_x_y(tile_pos.x, tile_pos.y, layer);
-                    Data_Manager.arr_block.push({
-                        x: world_pos.x,
-                        y: world_pos.y,
-                        width: 88 * 0.8,
-                        height: 102 * 0.8,
-                        type: image_type || 0,
-                    })
+                    if(image_type){
+                        Data_Manager.arr_block.push({
+                            x: world_pos.x,
+                            y: world_pos.y,
+                            width: this.tile_width * 0.8,
+                            height: this.tile_height * 0.8,
+                            type: image_type || 0,
+                        })
+                    }
                 }
             }
         }
@@ -124,15 +126,23 @@ export class GameManager extends Component {
         }
         return 
     }
+    tile_width = 88;
+    tile_height = 102;
     on_mouse_move(p: { x: number, y: number }) {
-        let x_y_id = TileMap_Utils.get_tile_x_y_by_position(p, this.get_tilemap_layer_world());
-        let id = TileMap_Utils.get_tile_id(x_y_id, this.get_tilemap_layer_world());
+        // let x_y_id = TileMap_Utils.get_tile_x_y_by_position(p, this.get_tilemap_layer_world());
+        // let id = TileMap_Utils.get_tile_id(x_y_id, this.get_tilemap_layer_world());
         for (const data of Data_Manager.arr_block) {
-            data.width = 88 * 0.8
-            data.height = 102 * 0.8
+            data.width = this.tile_width * 0.8;
+            data.height = this.tile_height * 0.8;
+            
+            if(p.x<data.x+this.tile_width/2
+            &&p.x>data.x-this.tile_width/2
+            &&p.y<data.y+this.tile_height/2
+            &&p.y>data.y-this.tile_height/2){
+                data.width = this.tile_width;
+                data.height = this.tile_height;
+            }
         }
-        Data_Manager.arr_block[id].width = 88;
-        Data_Manager.arr_block[id].height = 102;
         this.i_sp_render.set_data(Data_Manager.arr_block);
         console.log(`x:${p.x},y:${p.y}`)
     }
