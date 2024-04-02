@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMouse } from 'cc';
+import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMouse, TiledLayer } from 'cc';
 import { Infinity_Render } from '../Pub/Infinity_Render';
 import { TileMap_Utils } from '../Pub/TileMap_Utils';
 import { Block_Render } from '../Render/Block_Render';
@@ -22,27 +22,87 @@ export class GameManager extends Component {
     tm_map: TiledMap = undefined;
 
     readonly map_name_type: { [key: string]: number } = {
-        "0-.png": 0,
-        "sea.png": 1,
-        "coast.png": 2,
-        "land.png": 3,
+        "0-.png":0,
+        "Albejons_deuxième_République.png":1,
+        "Angesturas.png":2,
+        "Auleutian.png":3,
+        "Ballera_Free_State.png":4,
+        "Commonwealth_of_West_Fragnos.png":5,
+        "Coobanos.png":6,
+        "Fragnos_Konorix_Clique.png":7,
+        "Free_Island_of_Ellsworth.png":8,
+        "Golyok.png":9,
+        "Greater_Siegerkranz_Reich.png":10,
+        "Hjalmar.png":11,
+        "Hong'you.png":12,
+        "Hypernord_Kolonie.png":13,
+        "Ivorica.png":14,
+        "Kalecax_Island.png":15,
+        "Kalmania.png":16,
+        "Kazan.png":17,
+        "Kingdom_of_Aotearoa.png":18,
+        "Kingdom_of_East_Fragnos.png":19,
+        "Kingdom_of_Wilkes_Island.png":20,
+        "Kornorix_Republic.png":21,
+        "Kurvata.png":22,
+        "Lei'zhou.png":23,
+        "Lonoys_Island.png":24,
+        "Messier.png":25,
+        "Mohenzo.png":26,
+        "Mohiakhan.png":27,
+        "N.B.P.R.png":28,
+        "Nordenland.png":29,
+        "North_Island_Union.png":30,
+        "Nuland_Federation.png":31,
+        "Olosk.png":32,
+        "Qiao'jiang.png":33,
+        "R.K.Baquillat.png":34,
+        "R.K.Column.png":35,
+        "R.K.Gotnland.png":36,
+        "R.K.Wustan_und_Saxum.png":37,
+        "Republik_Lokhatskaya.png":38,
+        "Shi'cheng.png":39,
+        "State_of_Ennlake.png":40,
+        "Tabascona.png":41,
+        "Tula.png":42,
+        "Tulandot.png":43,
+        "Tyumen_Republic.png":44,
+        "Uballitia.png":45,
+        "Union_of_Grand_Santarrtic.png":46,
+        "United_Chiefdom_States_of_Tomoyo_Emirate.png":47,
+        "United_Further_East.png":48,
+        "Unovistan.png":49,
+        "Uran.png":50,
+        "Vankor.png":51,
+        "Vatula.png":52,
+        "Veramya.png":53,
+        "Virreinato_Parathius.png":54,
+        "Wang'guan.png":55,
+        "Wu'long.png":56,
+        "Wu'yuan.png":57,
+        "Zhong'jiao.png":58,
     }
 
     init_tile_map() {
         //初始化障碍块
-        let layer = this.tm_map.getLayer('Tile Layer 1');
-        for (let i = 0; i < layer.tiles.length; i++) {
-            let tile = layer.tiles[i];
-            let image_type = this.map_name_type[layer.getTileSets().find(v => v.firstGid == tile)?.imageName];
-            let tile_pos = TileMap_Utils.get_tile_x_y(i, layer);
-            let world_pos = TileMap_Utils.get_tile_position_by_x_y(tile_pos.x, tile_pos.y, layer);
-            Data_Manager.arr_block.push({
-                x: world_pos.x,
-                y: world_pos.y,
-                width: 88 * 0.8,
-                height: 102 * 0.8,
-                type: image_type || 0,
-            })
+        for (let i = 0; i < this.tm_map.node.children.length; i++) {
+            const c = this.tm_map.node.children[i];
+            let layer = c.getComponent(TiledLayer);
+            if(layer){
+                for (let i = 0; i < layer.tiles.length; i++) {
+                    let tile = layer.tiles[i];
+                    let image_type = this.map_name_type[layer.getTileSets().find(v => v.firstGid == tile)?.imageName];
+                    let tile_pos = TileMap_Utils.get_tile_x_y(i, layer);
+                    let world_pos = TileMap_Utils.get_tile_position_by_x_y(tile_pos.x, tile_pos.y, layer);
+                    Data_Manager.arr_block.push({
+                        x: world_pos.x,
+                        y: world_pos.y,
+                        width: 88 * 0.8,
+                        height: 102 * 0.8,
+                        type: image_type || 0,
+                    })
+                }
+            }
         }
     }
 
