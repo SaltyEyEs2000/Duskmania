@@ -88,7 +88,7 @@ export class GameManager extends Component {
         for (let i = 0; i < this.tm_map.node.children.length; i++) {
             const c = this.tm_map.node.children[i];
             let layer = c.getComponent(TiledLayer);
-            if(layer){
+            if(layer?.node.active){
                 for (let i = 0; i < layer.tiles.length; i++) {
                     let tile = layer.tiles[i];
                     let image_type = this.map_name_type[layer.getTileSets().find(v => v.firstGid == tile)?.imageName];
@@ -114,9 +114,19 @@ export class GameManager extends Component {
 
         Event_Dispatcher.on("mouse_move", this, this.on_mouse_move)
     }
+    get_tilemap_layer_world(){
+        for (let i = 0; i < this.tm_map.node.children.length; i++) {
+            const c = this.tm_map.node.children[i];
+            let layer = c.getComponent(TiledLayer);
+            if(layer?.node.active){
+                return layer;
+            }
+        }
+        return 
+    }
     on_mouse_move(p: { x: number, y: number }) {
-        let x_y_id = TileMap_Utils.get_tile_x_y_by_position(p, this.tm_map.getLayer('Tile Layer 1'));
-        let id = TileMap_Utils.get_tile_id(x_y_id, this.tm_map.getLayer('Tile Layer 1'));
+        let x_y_id = TileMap_Utils.get_tile_x_y_by_position(p, this.get_tilemap_layer_world());
+        let id = TileMap_Utils.get_tile_id(x_y_id, this.get_tilemap_layer_world());
         for (const data of Data_Manager.arr_block) {
             data.width = 88 * 0.8
             data.height = 102 * 0.8

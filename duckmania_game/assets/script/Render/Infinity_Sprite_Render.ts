@@ -44,7 +44,6 @@ export class Infinity_Sprite_Render extends UIRenderer {
         }
         this.getComponent(UITransform).width = maxx - minx;
         this.getComponent(UITransform).height = maxy - miny;
-
     }
 
     @property(SpriteFrame)
