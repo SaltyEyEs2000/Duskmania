@@ -1,10 +1,11 @@
-import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMouse, TiledLayer } from 'cc';
+import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMouse, TiledLayer, UITransform, Camera } from 'cc';
 import { Infinity_Render } from '../Pub/Infinity_Render';
 import { TileMap_Utils } from '../Pub/TileMap_Utils';
 import { Block_Render } from '../Render/Block_Render';
 import { Data_Manager } from './Data_Manager';
 import { Infinity_Sprite_Render } from '../Render/Infinity_Sprite_Render';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
+import { Manager_Camera } from './Manager_Camera';
 const { ccclass, property } = _decorator;
 
 @ccclass()
@@ -14,6 +15,8 @@ export class GameManager extends Component {
     @property(Prefab)
     pf_block: Prefab = undefined;
     i_render: Infinity_Render<Block_Render> = undefined;
+    @property(Camera)
+    camera: Camera = undefined
 
     @property(Infinity_Sprite_Render)
     i_sp_render: Infinity_Sprite_Render = undefined;
@@ -143,10 +146,18 @@ export class GameManager extends Component {
                 data.height = this.tile_height;
             }
         }
-        this.i_sp_render.set_data(Data_Manager.arr_block);
-        console.log(`x:${p.x},y:${p.y}`)
+        // console.log(`x:${p.x},y:${p.y}`)
     }
     update(deltaTime: number) {
+        let filter_data = Data_Manager.arr_block.filter(b=>{
+            let x = b.x-this.camera.node.position.x;
+            let y = b.y-this.camera.node.position.y;
+            let rect = this.getComponent(UITransform);
+            let w = this.camera.orthoHeight * 2 * rect.width/rect.height;
+            let h = this.camera.orthoHeight * 2
+            return x > -w/2 && x < w/2 && y > -h/2 && y < h/2;
+        })
+        this.i_sp_render.set_data(filter_data);
         // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }
 }
