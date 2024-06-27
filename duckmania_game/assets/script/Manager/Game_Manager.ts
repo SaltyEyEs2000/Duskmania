@@ -6,6 +6,8 @@ import { Data_Manager } from './Data_Manager';
 import { Infinity_Sprite_Render } from '../Render/Infinity_Sprite_Render';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
 import { Manager_Camera } from './Manager_Camera';
+import { Block_Data } from '../Data/Block_Data';
+import { Const_Event } from './Const_Event';
 const { ccclass, property } = _decorator;
 
 @ccclass()
@@ -20,6 +22,8 @@ export class GameManager extends Component {
 
     @property(Infinity_Sprite_Render)
     i_sp_render: Infinity_Sprite_Render = undefined;
+    @property(Infinity_Sprite_Render)
+    render_unit_bg: Infinity_Sprite_Render = undefined;
 
     @property(TiledMap)
     tm_map: TiledMap = undefined;
@@ -101,8 +105,8 @@ export class GameManager extends Component {
                         Data_Manager.arr_block.push({
                             x: world_pos.x,
                             y: world_pos.y,
-                            width: this.tile_width * 0.8,
-                            height: this.tile_height * 0.8,
+                            width: Data_Manager.tile_width * 0.8,
+                            height: Data_Manager.tile_height * 0.8,
                             type: image_type || 0,
                         })
                     }
@@ -117,7 +121,8 @@ export class GameManager extends Component {
         this.i_sp_render.set_data(Data_Manager.arr_block);
         this.tm_map.node.active = false;
 
-        Event_Dispatcher.on("mouse_move", this, this.on_mouse_move)
+        Event_Dispatcher.on(Const_Event.mouse_move, this, this.on_mouse_move)
+        Event_Dispatcher.on(Const_Event.mouse_click, this, this.on_mouse_click)
     }
     get_tilemap_layer_world(){
         for (let i = 0; i < this.tm_map.node.children.length; i++) {
@@ -129,35 +134,50 @@ export class GameManager extends Component {
         }
         return 
     }
-    tile_width = 88;
-    tile_height = 102;
+    get_mouse_block(p:{x:number,y:number}){
+        let ret:Block_Data;
+        for (const data of Data_Manager.arr_block) {
+            data.width = Data_Manager.tile_width * 0.8;
+            data.height = Data_Manager.tile_height * 0.8;
+            
+            if(p.x<data.x+Data_Manager.tile_width/2
+            &&p.x>data.x-Data_Manager.tile_width/2
+            &&p.y<data.y+Data_Manager.tile_height/2
+            &&p.y>data.y-Data_Manager.tile_height/2){
+                ret = data;
+            }
+        }
+        return ret;
+    }
+    on_mouse_click(p: { x: number, y: number }){
+        let d:Block_Data = this.get_mouse_block(p);
+        if(d){
+            Event_Dispatcher.post(Const_Event.map_block_click,d)
+        }
+    }
     on_mouse_move(p: { x: number, y: number }) {
         // let x_y_id = TileMap_Utils.get_tile_x_y_by_position(p, this.get_tilemap_layer_world());
         // let id = TileMap_Utils.get_tile_id(x_y_id, this.get_tilemap_layer_world());
-        for (const data of Data_Manager.arr_block) {
-            data.width = this.tile_width * 0.8;
-            data.height = this.tile_height * 0.8;
-            
-            if(p.x<data.x+this.tile_width/2
-            &&p.x>data.x-this.tile_width/2
-            &&p.y<data.y+this.tile_height/2
-            &&p.y>data.y-this.tile_height/2){
-                data.width = this.tile_width;
-                data.height = this.tile_height;
-            }
-        }
+        let data = this.get_mouse_block(p);
+        if(!data)return;
+        data.width = Data_Manager.tile_width;
+        data.height = Data_Manager.tile_height;
         // console.log(`x:${p.x},y:${p.y}`)
     }
     update(deltaTime: number) {
-        let filter_data = Data_Manager.arr_block.filter(b=>{
+        let filterOutCamera = b=>{
             let x = b.x-this.camera.node.position.x;
             let y = b.y-this.camera.node.position.y;
             let rect = this.getComponent(UITransform);
             let w = this.camera.orthoHeight * 2 * rect.width/rect.height;
             let h = this.camera.orthoHeight * 2
             return x > -w/2 && x < w/2 && y > -h/2 && y < h/2;
-        })
-        this.i_sp_render.set_data(filter_data);
+        }
+        let arr_block = Data_Manager.arr_block.filter(filterOutCamera);
+        this.i_sp_render.set_data(arr_block);
+
+        let arr_unit_bg = Data_Manager.get_arr_block_unit_bg().filter(filterOutCamera);
+        this.i_sp_render.set_data(arr_unit_bg);
         // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }
 }

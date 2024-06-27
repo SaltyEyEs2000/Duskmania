@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Button, NodeEventType, Camera, v3, game, UITransform, misc, input, Input, EventMouse, EventTouch } from 'cc';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
+import { Const_Event } from './Const_Event';
 const { ccclass, property } = _decorator;
 @ccclass('Manager_Camera')
 export class Manager_Camera extends Component {
@@ -43,6 +44,7 @@ export class Manager_Camera extends Component {
         input.on(Input.EventType.MOUSE_WHEEL, this.on_wheel, this);
         input.on(Input.EventType.MOUSE_MOVE, this.on_mouse, this)
         input.on(Input.EventType.TOUCH_MOVE, this.on_mouse, this)
+        input.on(Input.EventType.MOUSE_UP, this.on_click, this)
     }
 
     on_mouse(e: EventTouch | EventMouse) {
@@ -55,7 +57,19 @@ export class Manager_Camera extends Component {
             x:per_x * this.camera.orthoHeight * 2 * rect.width/rect.height + this.camera.node.position.x,
             y:per_y * this.camera.orthoHeight * 2 + this.camera.node.position.y,
         }
-        Event_Dispatcher.post("mouse_move",point)
+        Event_Dispatcher.post(Const_Event.mouse_move,point)
+    }
+    on_click(e: EventTouch | EventMouse) {
+        let uiPos = e.getUILocation();
+        let rect = this.canvas.getComponent(UITransform);
+        let per_x = uiPos.x / rect.width - 0.5;
+        let per_y = uiPos.y / rect.height - 0.5;
+
+        let point = {
+            x:per_x * this.camera.orthoHeight * 2 * rect.width/rect.height + this.camera.node.position.x,
+            y:per_y * this.camera.orthoHeight * 2 + this.camera.node.position.y,
+        }
+        Event_Dispatcher.post(Const_Event.mouse_click,point)
     }
     on_wheel(e: EventMouse) {
         this.camera.orthoHeight += e.getScrollY() * 0.1;

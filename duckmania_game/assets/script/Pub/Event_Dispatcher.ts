@@ -1,6 +1,6 @@
 export class Event_Dispatcher{
     public static map:{[key:string]:{target:any,selector:Function}[]} = {};
-    public static on(event:string,target:any,selector:Function){
+    public static on(event:string|number,target:any,selector:Function){
         if(!this.map[event]){
             this.map[event] = [];
         }
@@ -10,7 +10,7 @@ export class Event_Dispatcher{
         })
     }
     
-    public static off(event:string,target:any,selector:Function){
+    public static off(event:string|number,target:any,selector:Function){
         if(!this.map[event]){
             this.map[event] = [];
         }
@@ -23,7 +23,7 @@ export class Event_Dispatcher{
         }
     }
 
-    public static post(event:string,...params:any[]){
+    public static post(event:string|number,...params:any[]){
         if(!this.map[event]){
             return;
         }

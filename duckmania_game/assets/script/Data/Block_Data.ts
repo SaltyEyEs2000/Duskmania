@@ -11,4 +11,10 @@ export interface Battle_Unit_Data{
     hp:number;
     morale:number;
     form:number;
+    x:number;
+    y:number;
+}
+export interface UI_Manipulation_Data{
+    block:Block_Data;
+    value:string;
 }
