@@ -177,7 +177,7 @@ export class GameManager extends Component {
         this.i_sp_render.set_data(arr_block);
 
         let arr_unit_bg = Data_Manager.get_arr_block_unit_bg().filter(filterOutCamera);
-        this.i_sp_render.set_data(arr_unit_bg);
+        this.render_unit_bg.set_data(arr_unit_bg);
         // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }
 }
