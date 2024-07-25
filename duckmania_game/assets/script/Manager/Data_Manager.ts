@@ -1,4 +1,5 @@
 import { Battle_Unit_Data, Block_Data } from "../Data/Block_Data";
+import { CONTEXT_BLOCK } from "./Const_UI";
 export class Data_Manager{
     public static tile_width = 88;
     public static tile_height = 102;
@@ -19,5 +20,5 @@ export class Data_Manager{
         this._arr_block_unit_bg.splice(this.arr_unit.length)
         return this._arr_block_unit_bg;
     }
-    public static ui_block_click:string[] = ["创建单位"];
+    public static ui_block_click:string[] = [CONTEXT_BLOCK.CREATE_UNIT];
 }

@@ -34,11 +34,11 @@
         "__id__": 12
       },
       {
-        "__id__": 14
+        "__id__": 15
       }
     ],
     "_prefab": {
-      "__id__": 16
+      "__id__": 17
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -313,7 +313,11 @@
     "__prefab": {
       "__id__": 13
     },
-    "clickEvents": [],
+    "clickEvents": [
+      {
+        "__id__": 14
+      }
+    ],
     "_interactable": true,
     "_transition": 0,
     "_normalColor": {
@@ -358,6 +362,16 @@
     "fileId": "46RnwTXPdGqpYgT9k6Tlyi"
   },
   {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "0e57fdnQhFN67+XJfxFJ51A",
+    "handler": "clk_btn",
+    "customEventData": ""
+  },
+  {
     "__type__": "0e57fdnQhFN67+XJfxFJ51A",
     "_name": "",
     "_objFlags": 0,
@@ -367,7 +381,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 15
+      "__id__": 16
     },
     "lb_name": {
       "__id__": 5

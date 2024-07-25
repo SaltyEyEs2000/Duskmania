@@ -5,6 +5,7 @@ import { Infinity_Render } from '../Pub/Infinity_Render';
 import { UI_Manuplation } from '../UI/UI_Manipulation';
 import { Data_Manager } from './Data_Manager';
 import { Const_Event } from './Const_Event';
+import { CONTEXT_BLOCK } from './Const_UI';
 const { ccclass, property } = _decorator;
 @ccclass('Manager_Manipulation')
 export class Manager_Manipulation extends Component {
@@ -32,7 +33,7 @@ export class Manager_Manipulation extends Component {
     }
 
     manipulation(data:UI_Manipulation_Data){
-        if(data.value == "创建单位"){
+        if(data.value == CONTEXT_BLOCK.CREATE_UNIT){
             this.create_unit(data);
         }
     }
