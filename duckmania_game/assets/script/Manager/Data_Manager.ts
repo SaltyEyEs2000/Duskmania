@@ -1,6 +1,7 @@
 import { Battle_Unit_Data, Block_Data } from "../Data/Block_Data";
 import { CONTEXT_BLOCK } from "./Const_UI";
 export class Data_Manager{
+    public static init_scale = 0.99;
     public static tile_width = 88;
     public static tile_height = 102;
     public static arr_block:Block_Data[] = [];
@@ -13,7 +14,7 @@ export class Data_Manager{
                     x: unit.x,
                     y: unit.y,
                     width: 88,
-                    height: this.tile_height * 0.8,
+                    height: 102,
                     type: 0,
             }
         }

@@ -105,8 +105,8 @@ export class GameManager extends Component {
                         Data_Manager.arr_block.push({
                             x: world_pos.x,
                             y: world_pos.y,
-                            width: Data_Manager.tile_width * 0.8,
-                            height: Data_Manager.tile_height * 0.8,
+                            width: Data_Manager.tile_width * Data_Manager.init_scale,
+                            height: Data_Manager.tile_height * Data_Manager.init_scale,
                             type: image_type || 0,
                         })
                     }
@@ -137,8 +137,8 @@ export class GameManager extends Component {
     get_mouse_block(p:{x:number,y:number}){
         let ret:Block_Data;
         for (const data of Data_Manager.arr_block) {
-            data.width = Data_Manager.tile_width * 0.8;
-            data.height = Data_Manager.tile_height * 0.8;
+            data.width = Data_Manager.tile_width * Data_Manager.init_scale;
+            data.height = Data_Manager.tile_height * Data_Manager.init_scale;
             
             if(p.x<data.x+Data_Manager.tile_width/2
             &&p.x>data.x-Data_Manager.tile_width/2
