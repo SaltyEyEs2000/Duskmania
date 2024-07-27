@@ -13,7 +13,7 @@ export class Data_Manager{
             this._arr_block_unit_bg[i] = {
                     x: unit.x,
                     y: unit.y,
-                    width: 88,
+                    width: 102, 
                     height: 102,
                     type: 0,
             }
