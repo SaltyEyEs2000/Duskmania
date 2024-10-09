@@ -19,16 +19,11 @@ export class Manager_Manipulation extends Component {
         Event_Dispatcher.on(Const_Event.map_block_click, this, this.on_click_map_block)
         Event_Dispatcher.on(Const_Event.manipulation, this, this.manipulation)
     }
-    last_block: Data_Block = undefined;
     on_click_map_block(block: Data_Block) {
-        if (block == this.last_block) {
-            this.hide_manipulation();
-        } else {
-            this.show_manipulation(block);
-            this.last_block = block;
-        }
+        this.show_manipulation(block);
     }
     hide_manipulation() {
+        Manager_Data.last_hide_manipulation_tm = Manager_Data.curTm;
         Manager_Data.is_show_manipulation = false;
         this.i_render.fresh(v => true, []);
     }
@@ -54,8 +49,8 @@ export class Manager_Manipulation extends Component {
             this.remove_unit(data);
         }
         if (data.value == CONTEXT_BLOCK.CLOSE_MANIPULATION){
-            this.hide_manipulation();
         }
+        this.hide_manipulation();
     }
 
     find_unit_id(block:Data_Block){

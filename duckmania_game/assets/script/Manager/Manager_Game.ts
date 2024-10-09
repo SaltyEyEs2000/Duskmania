@@ -146,6 +146,7 @@ export class GameManager extends Component {
         return ret;
     }
     on_mouse_click(p: { x: number, y: number }) {
+        if (Manager_Data.last_hide_manipulation_tm == Manager_Data.curTm) return;
         if (Manager_Data.is_show_manipulation) {
             Event_Dispatcher.post(Const_Event.manipulation, {
                 index: 0,
@@ -169,6 +170,7 @@ export class GameManager extends Component {
         // console.log(`x:${p.x},y:${p.y}`)
     }
     update(deltaTime: number) {
+        Manager_Data.curTm = (new Date()).getTime();
         let filterOutCamera = b => {
             let x = b.x - this.camera.node.position.x;
             let y = b.y - this.camera.node.position.y;
