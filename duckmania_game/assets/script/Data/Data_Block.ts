@@ -1,11 +1,11 @@
-export interface Block_Data{
+export interface Data_Block{
     x:number;
     y:number;
     width:number;
     height:number;
     type:number;
 }
-export interface Battle_Unit_Data{
+export interface Data_Battle_Unit{
     unit_type:number;
     belong:number;
     hp:number;
@@ -14,7 +14,7 @@ export interface Battle_Unit_Data{
     x:number;
     y:number;
 }
-export interface UI_Manipulation_Data{
-    block:Block_Data;
+export interface Data_UI_Manipulation{
+    block:Data_Block;
     value:string;
 }

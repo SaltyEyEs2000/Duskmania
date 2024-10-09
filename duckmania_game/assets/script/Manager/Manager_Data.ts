@@ -1,13 +1,13 @@
-import { Battle_Unit_Data, Block_Data } from "../Data/Block_Data";
+import { Data_Battle_Unit, Data_Block } from "../Data/Data_Block";
 import { CONTEXT_BLOCK } from "./Const_UI";
-export class Data_Manager{
+export class Manager_Data{
     public static init_scale = 0.99;
     public static tile_width = 88;
     public static tile_height = 102;
-    public static arr_block:Block_Data[] = [];
-    public static arr_unit:Battle_Unit_Data[] = [];
-    private static _arr_block_unit_bg:Block_Data[] = [];
-    public static get_arr_block_unit_bg():Block_Data[]{
+    public static arr_block:Data_Block[] = [];
+    public static arr_unit:Data_Battle_Unit[] = [];
+    private static _arr_block_unit_bg:Data_Block[] = [];
+    public static get_arr_block_unit_bg():Data_Block[]{
         for (let i = 0; i < this.arr_unit.length; i++) {
             const unit = this.arr_unit[i];
             this._arr_block_unit_bg[i] = {

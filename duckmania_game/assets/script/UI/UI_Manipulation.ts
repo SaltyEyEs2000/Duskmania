@@ -1,7 +1,7 @@
 import { _decorator, Component, Label, Node, v3 } from 'cc';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
 import { Infinity_Renderer } from '../Pub/Infinity_Render';
-import { UI_Manipulation_Data } from '../Data/Block_Data';
+import { Data_UI_Manipulation } from '../Data/Data_Block';
 import { Const_Event } from '../Manager/Const_Event';
 const { ccclass, property } = _decorator;
 
@@ -9,8 +9,8 @@ const { ccclass, property } = _decorator;
 export class UI_Manuplation extends Component implements Infinity_Renderer {
     @property(Label)
     lb_name:Label = undefined;
-    data:UI_Manipulation_Data;
-    fresh(data:UI_Manipulation_Data){
+    data:Data_UI_Manipulation;
+    fresh(data:Data_UI_Manipulation){
         this.data = data;
         this.node.setPosition(v3(data.block.x,data.block.y,0))
         this.lb_name.string = data.value;

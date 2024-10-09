@@ -2,28 +2,24 @@ import { _decorator, Component, Node, Prefab, TiledMap, NodeEventType, EventMous
 import { Infinity_Render } from '../Pub/Infinity_Render';
 import { TileMap_Utils } from '../Pub/TileMap_Utils';
 import { Block_Render } from '../Render/Block_Render';
-import { Data_Manager } from './Data_Manager';
+import { Manager_Data } from './Manager_Data';
 import { Infinity_Sprite_Render } from '../Render/Infinity_Sprite_Render';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
 import { Manager_Camera } from './Manager_Camera';
-import { Block_Data } from '../Data/Block_Data';
+import { Data_Block } from '../Data/Data_Block';
 import { Const_Event } from './Const_Event';
 const { ccclass, property } = _decorator;
 
 @ccclass()
 export class GameManager extends Component {
-    @property(Node)
-    nd_arr_block: Node = undefined;
-    @property(Prefab)
-    pf_block: Prefab = undefined;
     i_render: Infinity_Render<Block_Render> = undefined;
     @property(Camera)
     camera: Camera = undefined
 
     @property(Infinity_Sprite_Render)
-    i_sp_render: Infinity_Sprite_Render = undefined;
+    i_block: Infinity_Sprite_Render = undefined;
     @property(Infinity_Sprite_Render)
-    render_unit_bg: Infinity_Sprite_Render = undefined;
+    i_unit: Infinity_Sprite_Render = undefined;
 
     @property(TiledMap)
     tm_map: TiledMap = undefined;
@@ -102,11 +98,11 @@ export class GameManager extends Component {
                     let tile_pos = TileMap_Utils.get_tile_x_y(i, layer);
                     let world_pos = TileMap_Utils.get_tile_position_by_x_y(tile_pos.x, tile_pos.y, layer);
                     if(image_type){
-                        Data_Manager.arr_block.push({
+                        Manager_Data.arr_block.push({
                             x: world_pos.x,
                             y: world_pos.y,
-                            width: Data_Manager.tile_width * Data_Manager.init_scale,
-                            height: Data_Manager.tile_height * Data_Manager.init_scale,
+                            width: Manager_Data.tile_width * Manager_Data.init_scale,
+                            height: Manager_Data.tile_height * Manager_Data.init_scale,
                             type: image_type || 0,
                         })
                     }
@@ -116,9 +112,8 @@ export class GameManager extends Component {
     }
 
     start() {
-        // this.i_render = new Infinity_Render(this.nd_arr_block,this.pf_block,Block_Render);
         this.init_tile_map();
-        this.i_sp_render.set_data(Data_Manager.arr_block);
+        this.i_block.set_data(Manager_Data.arr_block);
         this.tm_map.node.active = false;
 
         Event_Dispatcher.on(Const_Event.mouse_move, this, this.on_mouse_move)
@@ -135,22 +130,22 @@ export class GameManager extends Component {
         return 
     }
     get_mouse_block(p:{x:number,y:number}){
-        let ret:Block_Data;
-        for (const data of Data_Manager.arr_block) {
-            data.width = Data_Manager.tile_width * Data_Manager.init_scale;
-            data.height = Data_Manager.tile_height * Data_Manager.init_scale;
+        let ret:Data_Block;
+        for (const data of Manager_Data.arr_block) {
+            data.width = Manager_Data.tile_width * Manager_Data.init_scale;
+            data.height = Manager_Data.tile_height * Manager_Data.init_scale;
             
-            if(p.x<data.x+Data_Manager.tile_width/2
-            &&p.x>data.x-Data_Manager.tile_width/2
-            &&p.y<data.y+Data_Manager.tile_height/2
-            &&p.y>data.y-Data_Manager.tile_height/2){
+            if(p.x<data.x+Manager_Data.tile_width/2
+            &&p.x>data.x-Manager_Data.tile_width/2
+            &&p.y<data.y+Manager_Data.tile_height/2
+            &&p.y>data.y-Manager_Data.tile_height/2){
                 ret = data;
             }
         }
         return ret;
     }
     on_mouse_click(p: { x: number, y: number }){
-        let d:Block_Data = this.get_mouse_block(p);
+        let d:Data_Block = this.get_mouse_block(p);
         if(d){
             Event_Dispatcher.post(Const_Event.map_block_click,d)
         }
@@ -160,8 +155,8 @@ export class GameManager extends Component {
         // let id = TileMap_Utils.get_tile_id(x_y_id, this.get_tilemap_layer_world());
         let data = this.get_mouse_block(p);
         if(!data)return;
-        data.width = Data_Manager.tile_width;
-        data.height = Data_Manager.tile_height;
+        data.width = Manager_Data.tile_width;
+        data.height = Manager_Data.tile_height;
         // console.log(`x:${p.x},y:${p.y}`)
     }
     update(deltaTime: number) {
@@ -173,11 +168,11 @@ export class GameManager extends Component {
             let h = this.camera.orthoHeight * 2
             return x > -w/2 && x < w/2 && y > -h/2 && y < h/2;
         }
-        let arr_block = Data_Manager.arr_block.filter(filterOutCamera);
-        this.i_sp_render.set_data(arr_block);
+        let arr_block = Manager_Data.arr_block.filter(filterOutCamera);
+        this.i_block.set_data(arr_block);
 
-        let arr_unit_bg = Data_Manager.get_arr_block_unit_bg().filter(filterOutCamera);
-        this.render_unit_bg.set_data(arr_unit_bg);
+        let arr_unit_bg = Manager_Data.get_arr_block_unit_bg().filter(filterOutCamera);
+        this.i_unit.set_data(arr_unit_bg);
         // this.i_render.fresh(v=>true,Data_Manager.arr_block);
     }
 }

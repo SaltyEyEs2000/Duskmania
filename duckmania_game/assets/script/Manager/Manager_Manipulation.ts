@@ -1,9 +1,9 @@
 import { _decorator, Component, Node, Button, NodeEventType, Camera, v3, game, UITransform, misc, input, Input, EventMouse, EventTouch, Prefab } from 'cc';
 import { Event_Dispatcher } from '../Pub/Event_Dispatcher';
-import { Block_Data, UI_Manipulation_Data } from '../Data/Block_Data';
+import { Data_Block, Data_UI_Manipulation } from '../Data/Data_Block';
 import { Infinity_Render } from '../Pub/Infinity_Render';
 import { UI_Manuplation } from '../UI/UI_Manipulation';
-import { Data_Manager } from './Data_Manager';
+import { Manager_Data } from './Manager_Data';
 import { Const_Event } from './Const_Event';
 import { CONTEXT_BLOCK } from './Const_UI';
 const { ccclass, property } = _decorator;
@@ -20,10 +20,10 @@ export class Manager_Manipulation extends Component {
         Event_Dispatcher.on(Const_Event.manipulation, this, this.create_unit)
 
     }
-    show_manipulation(block:Block_Data){
-        let arr_data:UI_Manipulation_Data[] = [];
-        for (let i = 0; i < Data_Manager.ui_block_click.length; i++) {
-            const manipulation = Data_Manager.ui_block_click[i];
+    show_manipulation(block:Data_Block){
+        let arr_data:Data_UI_Manipulation[] = [];
+        for (let i = 0; i < Manager_Data.ui_block_click.length; i++) {
+            const manipulation = Manager_Data.ui_block_click[i];
             arr_data.push({
                 block:block,
                 value:manipulation,
@@ -32,13 +32,13 @@ export class Manager_Manipulation extends Component {
         this.i_render.fresh(v=>true,arr_data)
     }
 
-    manipulation(data:UI_Manipulation_Data){
+    manipulation(data:Data_UI_Manipulation){
         if(data.value == CONTEXT_BLOCK.CREATE_UNIT){
             this.create_unit(data);
         }
     }
-    create_unit(data:UI_Manipulation_Data){
-        Data_Manager.arr_unit.push({
+    create_unit(data:Data_UI_Manipulation){
+        Manager_Data.arr_unit.push({
             unit_type:0,
             belong:0,
             hp:0,

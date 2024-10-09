@@ -1,6 +1,6 @@
 import { IAssembler, IRenderData, RenderData, SpriteFrame, dynamicAtlasManager, sp ,Node} from "cc";
 import { Infinity_Render_Data, Infinity_Sprite_Render } from "./Infinity_Sprite_Render";
-import { Block_Data } from "../Data/Block_Data";
+import { Data_Block } from "../Data/Data_Block";
 
 export const Infinity_Sprite_Assembler: IAssembler = {
 

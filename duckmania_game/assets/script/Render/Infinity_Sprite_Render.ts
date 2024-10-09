@@ -1,6 +1,6 @@
 import { __private, _decorator, ccenum, CCFloat, CCInteger, cclegacy, Component, InstanceMaterialType, Material, Node, NodeEventType, RenderData, RenderTexture, serializeTag, Sprite, SpriteAtlas, SpriteFrame, UIRenderer, Vec2, UITransform, EventMouse } from 'cc';
 import { BUILD, EDITOR } from 'cc/env';
-import { Block_Data } from '../Data/Block_Data';
+import { Data_Block } from '../Data/Data_Block';
 import { Infinity_Sprite_Assembler } from './Infinity_Sprite_Assembler';
 
 const { ccclass, property, type } = _decorator;
@@ -8,7 +8,7 @@ const { ccclass, property, type } = _decorator;
 export interface Infinity_Render_Data {
     spriteFrame: SpriteFrame,
     render_data: RenderData,
-    data: Block_Data,
+    data: Data_Block,
 }
 enum EventType {
     SPRITE_FRAME_CHANGED = 'spriteframe-changed',
@@ -17,10 +17,10 @@ const MaxGridsLimit = Math.ceil(1000);
 @ccclass('Infinity_Sprite_Render')
 
 export class Infinity_Sprite_Render extends UIRenderer {
-    data: Block_Data[] = [];
+    data: Data_Block[] = [];
     _arr_render_data: Infinity_Render_Data[] = [];
     _idx_render_data = 0;
-    set_data(data: Block_Data[]) {
+    set_data(data: Data_Block[]) {
         this.data = data;
         this.resetAssembler();
         this.markForUpdateRenderData();
