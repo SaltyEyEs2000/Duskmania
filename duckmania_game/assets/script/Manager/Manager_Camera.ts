@@ -22,29 +22,37 @@ export class Manager_Camera extends Component {
     camera: Camera = undefined
     right_spd = 0;
     up_spd = 0;
+    readonly hover_on = false;
     start() {
+        this.camera.node.setPosition(v3(-3775,-4192))
 
-        this.btn_right.node.on(NodeEventType.MOUSE_ENTER, this.hover_right, this);
-        this.btn_left.node.on(NodeEventType.MOUSE_ENTER, this.hover_left, this);
-        this.btn_up.node.on(NodeEventType.MOUSE_ENTER, this.hover_up, this);
-        this.btn_down.node.on(NodeEventType.MOUSE_ENTER, this.hover_down, this);
         this.btn_right.node.on(NodeEventType.TOUCH_START, this.hover_right, this);
         this.btn_left.node.on(NodeEventType.TOUCH_START, this.hover_left, this);
         this.btn_up.node.on(NodeEventType.TOUCH_START, this.hover_up, this);
         this.btn_down.node.on(NodeEventType.TOUCH_START, this.hover_down, this);
-        this.btn_right.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
-        this.btn_left.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
-        this.btn_up.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
-        this.btn_down.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
         this.btn_right.node.on(NodeEventType.TOUCH_END, this.hover_end, this);
         this.btn_left.node.on(NodeEventType.TOUCH_END, this.hover_end, this);
         this.btn_up.node.on(NodeEventType.TOUCH_END, this.hover_end, this);
         this.btn_down.node.on(NodeEventType.TOUCH_END, this.hover_end, this);
+        
+        if(this.hover_on){
+            this.btn_right.node.on(NodeEventType.MOUSE_ENTER, this.hover_right, this);
+            this.btn_left.node.on(NodeEventType.MOUSE_ENTER, this.hover_left, this);
+            this.btn_up.node.on(NodeEventType.MOUSE_ENTER, this.hover_up, this);
+            this.btn_down.node.on(NodeEventType.MOUSE_ENTER, this.hover_down, this);
+            this.btn_right.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
+            this.btn_left.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
+            this.btn_up.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
+            this.btn_down.node.on(NodeEventType.MOUSE_LEAVE, this.hover_end, this);
+        }
 
         input.on(Input.EventType.MOUSE_WHEEL, this.on_wheel, this);
-        input.on(Input.EventType.MOUSE_MOVE, this.on_mouse, this)
-        input.on(Input.EventType.TOUCH_MOVE, this.on_mouse, this)
-        input.on(Input.EventType.MOUSE_UP, this.on_click, this)
+        input.on(Input.EventType.MOUSE_MOVE, this.on_mouse, this);
+        input.on(Input.EventType.TOUCH_MOVE, this.on_mouse, this);
+        input.on(Input.EventType.MOUSE_UP, this.on_click, this);
+
+        this.camera.orthoHeight = 660;
+        this.update_ui_scale();
     }
 
     on_mouse(e: EventTouch | EventMouse) {
@@ -76,6 +84,9 @@ export class Manager_Camera extends Component {
         if (this.camera.orthoHeight < 50) {
             this.camera.orthoHeight = 50;
         }
+        this.update_ui_scale();
+    }
+    update_ui_scale(){
         let scale = this.camera.orthoHeight / 360
         this.node.setScale(v3(scale, scale, 1))
     }

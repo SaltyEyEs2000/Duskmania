@@ -1,4 +1,4 @@
-import { Component,Node, Prefab } from "cc";
+import { Component, Node, Prefab } from "cc";
 import { Node_Pool } from "./Node_Pool";
 
 
@@ -14,7 +14,7 @@ export abstract class Infinity_Renderer extends Component {
     public abstract fresh(data: any);
 }
 
-export class Infinity_Render<T extends Infinity_Renderer>{
+export class Infinity_Render<T extends Infinity_Renderer> {
     node_pool: Node_Pool;
     parent: Node;
     pf: Node | Prefab;
