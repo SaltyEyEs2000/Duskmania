@@ -1,4 +1,5 @@
 import { Data_Battle_Unit, Data_Block } from "../Data/Data_Block";
+import { Math_Utils } from "../Pub/Math_Utils";
 import { CONTEXT_BLOCK } from "./Const_UI";
 export class Manager_Data {
     public static curTm = 0;
@@ -24,5 +25,18 @@ export class Manager_Data {
         this._arr_block_unit_bg.splice(this.arr_unit.length)
         return this._arr_block_unit_bg;
     }
-    public static UI_BLOCK_CLICK: string[] = [CONTEXT_BLOCK.CREATE_UNIT,CONTEXT_BLOCK.REMOVE_UNIT,CONTEXT_BLOCK.MOVE_UNIT];
+    public static get_arr_block_in_range(tgt_block: Data_Block, range: number): Data_Block[] {
+        let ret: Data_Block[] = [];
+        for (let i = 0; i < this.arr_block.length; i++) {
+            const block = this.arr_block[i];
+            if (tgt_block == block) continue;
+            if (Math_Utils.get_distance(tgt_block, block) < 52 * 2 * range + 10) {
+                ret.push(block);
+            }
+        }
+        return ret;
+    }
+    public static UI_BLOCK_CLICK: CONTEXT_BLOCK[] = [CONTEXT_BLOCK.CREATE_UNIT];
+    public static UI_UNIT_CLICK: CONTEXT_BLOCK[] = [CONTEXT_BLOCK.REMOVE_UNIT, CONTEXT_BLOCK.MOVE_UNIT]
+    public static UI_BLOCK_MOVE: CONTEXT_BLOCK[] = [CONTEXT_BLOCK.LMOVE_UNIT_TO_BLOCK];
 }
